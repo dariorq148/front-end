@@ -22,7 +22,7 @@ class _My__ButtonState extends State<My__Button> {
       child: MouseRegion(
         onEnter: (_) {
           setState(() {
-            _isHovering = true; // Activa hover al entrar
+            _isHovering = true;
           });
         },
         onExit: (_) {

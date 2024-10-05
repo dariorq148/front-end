@@ -14,7 +14,7 @@ class My__Buttons_Movil extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        padding: EdgeInsets.zero, // Removemos el padding aquí para usar el del Ink
+        padding: EdgeInsets.zero,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(5),
         ),
@@ -29,8 +29,8 @@ class My__Buttons_Movil extends StatelessWidget {
           borderRadius: BorderRadius.circular(5),
         ),
         child: Container(
-          padding: EdgeInsets.all(15), // Movemos el padding aquí
-          alignment: Alignment.center, // Alineamos el texto en el centro
+          padding: EdgeInsets.all(15),
+          alignment: Alignment.center,
           child: Text(
             textbutton,
             style: MyText__Bold(),
