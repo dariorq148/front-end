@@ -8,3 +8,11 @@ TextStyle MyText__Bold() {
     color: Colores.color5,
   );
 }
+
+TextStyle My__Subtitle() {
+  return TextStyle(
+    fontSize: 15,
+    fontWeight: FontWeight.w500,
+    color: Colores.color5,
+  );
+}
