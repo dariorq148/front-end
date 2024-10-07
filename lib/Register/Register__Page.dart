@@ -1,22 +1,26 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:untitled3/Register/Register__Page.dart';
+import 'package:untitled3/Login/Login__Page.dart';
+import 'package:untitled3/Register/Register__PageTwoo.dart';
 import 'package:untitled3/Widgets/Buttons/My__Buttons_movil.dart';
 import 'package:untitled3/Widgets/Statics/Static__Colors.dart';
 import 'package:untitled3/Widgets/TextFields__Widget.dart';
 import 'package:untitled3/Widgets/sized__box_Extension.dart';
 
-class Login__Page extends StatefulWidget {
-  const Login__Page({super.key});
+class Register__Page extends StatefulWidget {
+  const Register__Page({super.key});
 
   @override
-  State<Login__Page> createState() => _Login__PageState();
+  State<Register__Page> createState() => _Register__PageState();
 }
 
-class _Login__PageState extends State<Login__Page> {
-  TextEditingController emailcontroller = TextEditingController();
-  TextEditingController passwordcontroller = TextEditingController();
+class _Register__PageState extends State<Register__Page> {
+  TextEditingController namecontroller = TextEditingController();
+  TextEditingController lastnamecontroller = TextEditingController();
+
+  TextEditingController birthdatecontroller = TextEditingController();
+  TextEditingController Dnicontroller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -49,7 +53,7 @@ class _Login__PageState extends State<Login__Page> {
                       /*Titulo*/
                       Container(
                         child: Text(
-                          'Iniciar Sesión',
+                          'Registrate',
                           style: TextStyle(color: Colores.color5, fontSize: 25),
                         ),
                       ),
@@ -62,12 +66,12 @@ class _Login__PageState extends State<Login__Page> {
                           children: [
                             Row(
                               children: [
-                                Icon(Icons.email),
+                                Icon(Icons.person),
                                 1.kW,
                                 Expanded(
                                   child: My__Textfields(
-                                      controller: emailcontroller,
-                                      hintText: 'e-mail',
+                                      controller: namecontroller,
+                                      hintText: 'Nombres',
                                       obscureText: false),
                                 ),
                               ],
@@ -75,13 +79,41 @@ class _Login__PageState extends State<Login__Page> {
                             15.kH,
                             Row(
                               children: [
-                                Icon(Icons.password),
+                                Icon(Icons.person),
                                 1.kW,
                                 Expanded(
                                   child: My__Textfields(
-                                    controller: passwordcontroller,
-                                    hintText: 'Password',
-                                    obscureText: true,
+                                    controller: lastnamecontroller,
+                                    hintText: 'Apellidos',
+                                    obscureText: false,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            15.kH,
+                            Row(
+                              children: [
+                                Icon(Icons.date_range),
+                                1.kW,
+                                Expanded(
+                                  child: My__Textfields(
+                                    controller: birthdatecontroller,
+                                    hintText: '00/00/000',
+                                    obscureText: false,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            15.kH,
+                            Row(
+                              children: [
+                                Icon(Icons.perm_identity),
+                                1.kW,
+                                Expanded(
+                                  child: My__Textfields(
+                                    controller: Dnicontroller,
+                                    hintText: 'Documento de Identidad',
+                                    obscureText: false,
                                   ),
                                 ),
                               ],
@@ -93,7 +125,7 @@ class _Login__PageState extends State<Login__Page> {
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Text('No tienes cuenta?'),
+                                  Text('Ya tienes cuenta?'),
                                   2.kW,
                                   GestureDetector(
                                     onTap: () {
@@ -101,7 +133,7 @@ class _Login__PageState extends State<Login__Page> {
                                           context,
                                           MaterialPageRoute(
                                             builder: (context) =>
-                                                Register__Page(),
+                                                Login__Page(),
                                           ));
                                     },
                                     child: Text(
@@ -120,9 +152,9 @@ class _Login__PageState extends State<Login__Page> {
                       Container(
                         height: 40,
                         child: My__Buttons_Movil(
-                          textbutton: 'Inicia',
+                          textbutton: 'Siguiente',
                           onPressed: () {
-                            // Acción al presionar el botón
+                            Navigator.push(context,MaterialPageRoute(builder: (context) => Register__PageT(),));
                           },
                         ),
                       ),

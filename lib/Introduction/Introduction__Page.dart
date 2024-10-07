@@ -18,14 +18,14 @@ class Introduction__Page extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 25),
+          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 25),
           child: Center(
             child: IntroductionScreen(
               autoScrollDuration: 3000,
               allowImplicitScrolling: true,
               globalFooter: SizedBox(
                 width: double.infinity,
-                height: 60,
+                height: 50,
                 child: ElevatedButton(
                   onPressed: () => _onIntroEnd(context),
                   child: const Text(
@@ -65,12 +65,12 @@ class Introduction__Page extends StatelessWidget {
               back: const Icon(Icons.arrow_back_ios),
               skip: const Text(
                 'Siguiente',
-                style: TextStyle(fontWeight: FontWeight.w600),
+                style: TextStyle(fontWeight: FontWeight.w600,fontSize: 11),
               ),
               next: const Icon(Icons.arrow_forward_ios_rounded),
               done: const Text(
                 'Terminar',
-                style: TextStyle(fontWeight: FontWeight.w600),
+                style: TextStyle(fontWeight: FontWeight.w600,fontSize: 11),
               ),
               curve: Curves.fastLinearToSlowEaseIn,
               controlsMargin: const EdgeInsets.all(16),
