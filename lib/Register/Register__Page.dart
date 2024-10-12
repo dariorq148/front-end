@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:untitled3/Login/Login__Page.dart';
 import 'package:untitled3/Register/Register__PageTwoo.dart';
 import 'package:untitled3/Widgets/Buttons/My__Buttons_movil.dart';
 import 'package:untitled3/Widgets/Statics/Static__Colors.dart';
@@ -33,7 +32,8 @@ class _Register__PageState extends State<Register__Page> {
             child: Stack(
               children: [
                 /*fondo*/
-                Opacity(opacity: 0.2, child: Image.asset('assets/login.png')),
+                Opacity(
+                    opacity: 0.2, child: Image.asset('assets/registrar.png')),
                 Positioned.fill(
                   child: ImageFiltered(
                     imageFilter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
@@ -121,26 +121,13 @@ class _Register__PageState extends State<Register__Page> {
                             15.kH,
                             /*texto*/
                             Container(
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Text('Ya tienes cuenta?'),
-                                  2.kW,
-                                  GestureDetector(
-                                    onTap: () {
-                                      Navigator.pushReplacement(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) =>
-                                                Login__Page(),
-                                          ));
-                                    },
-                                    child: Text(
-                                      'inicia aquí',
-                                      style: TextStyle(color: Colores.color6),
-                                    ),
-                                  )
+                                  Text(
+                                    'Ya casi terminas!!!',
+                                    style: TextStyle(fontSize: 20),
+                                  ),
                                 ],
                               ),
                             ),
@@ -154,7 +141,11 @@ class _Register__PageState extends State<Register__Page> {
                         child: My__Buttons_Movil(
                           textbutton: 'Siguiente',
                           onPressed: () {
-                            Navigator.push(context,MaterialPageRoute(builder: (context) => Register__PageT(),));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => Register__PageT(),
+                                ));
                           },
                         ),
                       ),

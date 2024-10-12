@@ -1,8 +1,6 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:untitled3/Login/Login__Page.dart';
-import 'package:untitled3/Register/Register__Page.dart';
 import 'package:untitled3/Widgets/Buttons/My__Buttons_movil.dart';
 import 'package:untitled3/Widgets/Statics/Static__Colors.dart';
 import 'package:untitled3/Widgets/TextFields__Widget.dart';
@@ -32,7 +30,7 @@ class _Register__PageTState extends State<Register__PageT> {
             child: Stack(
               children: [
                 /*fondo*/
-                Opacity(opacity: 0.2, child: Image.asset('assets/login.png')),
+                Opacity(opacity: 0.2, child: Image.asset('assets/registrar.png')),
                 Positioned.fill(
                   child: ImageFiltered(
                     imageFilter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
@@ -119,29 +117,7 @@ class _Register__PageTState extends State<Register__PageT> {
                             ),
                             15.kH,
                             /*texto*/
-                            Container(
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text('Ya tienes cuenta?'),
-                                  2.kW,
-                                  GestureDetector(
-                                    onTap: () {
-                                      Navigator.pushReplacement(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) => Login__Page(),
-                                          ));
-                                    },
-                                    child: Text(
-                                      'inicia aquí',
-                                      style: TextStyle(color: Colores.color6),
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ),
+
                           ],
                         ),
                       ),

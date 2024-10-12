@@ -1,6 +1,7 @@
-import 'dart:ui';
 
+import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:untitled3/Register/Core/Register__endpoint.dart';
 import 'package:untitled3/Register/Register__Page.dart';
 import 'package:untitled3/Widgets/Buttons/My__Buttons_movil.dart';
 import 'package:untitled3/Widgets/Statics/Static__Colors.dart';
@@ -15,9 +16,14 @@ class Login__Page extends StatefulWidget {
 }
 
 class _Login__PageState extends State<Login__Page> {
+
   TextEditingController emailcontroller = TextEditingController();
   TextEditingController passwordcontroller = TextEditingController();
 
+void clear_(){
+  emailcontroller.clear();
+  passwordcontroller.clear();
+}
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -121,8 +127,11 @@ class _Login__PageState extends State<Login__Page> {
                         height: 40,
                         child: My__Buttons_Movil(
                           textbutton: 'Inicia',
-                          onPressed: () {
-                            // Acción al presionar el botón
+                          onPressed: ()async {
+                        User _user=User(passwordcontroller.text,
+                            emailcontroller.text);
+                        await login(_user,context);
+                        clear_();
                           },
                         ),
                       ),
