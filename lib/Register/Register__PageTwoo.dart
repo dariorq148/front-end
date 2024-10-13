@@ -1,13 +1,22 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:untitled3/Home/Home__Page.dart';
+import 'package:untitled3/Models/model__User.dart';
 import 'package:untitled3/Widgets/Buttons/My__Buttons_movil.dart';
 import 'package:untitled3/Widgets/Statics/Static__Colors.dart';
 import 'package:untitled3/Widgets/TextFields__Widget.dart';
 import 'package:untitled3/Widgets/sized__box_Extension.dart';
-
+import 'Core/Register__endpoint.dart';
 class Register__PageT extends StatefulWidget {
-  const Register__PageT({super.key});
+  final String name, dni, lastname, birthdate;
+
+  const Register__PageT(
+      {super.key,
+      required this.birthdate,
+      required this.dni,
+      required this.lastname,
+      required this.name});
 
   @override
   State<Register__PageT> createState() => _Register__PageTState();
@@ -30,7 +39,8 @@ class _Register__PageTState extends State<Register__PageT> {
             child: Stack(
               children: [
                 /*fondo*/
-                Opacity(opacity: 0.2, child: Image.asset('assets/registrar.png')),
+                Opacity(
+                    opacity: 0.2, child: Image.asset('assets/registrar.png')),
                 Positioned.fill(
                   child: ImageFiltered(
                     imageFilter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
@@ -117,7 +127,6 @@ class _Register__PageTState extends State<Register__PageT> {
                             ),
                             15.kH,
                             /*texto*/
-
                           ],
                         ),
                       ),
@@ -127,13 +136,19 @@ class _Register__PageTState extends State<Register__PageT> {
                         height: 40,
                         child: My__Buttons_Movil(
                           textbutton: 'Registrar',
-                          onPressed: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => Register__PageT(),
-                                ));
-                          },
+                          onPressed: () async {
+                            User _user = User.register(
+                              name: widget.name,
+                              password: passwordcontroller.text,
+                              lastname: widget.lastname,
+                              email: emailcontroller.text,
+                              dni: widget.dni,
+                              cellphone: cellphonecontroller.text,
+                              birthdate: widget.birthdate,
+                            );
+
+                            await register(_user,context);                    },
+
                         ),
                       ),
                     ],

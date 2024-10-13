@@ -1,12 +1,13 @@
-
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:untitled3/Register/Core/Register__endpoint.dart';
+import 'package:untitled3/Models/model__User.dart';
 import 'package:untitled3/Register/Register__Page.dart';
 import 'package:untitled3/Widgets/Buttons/My__Buttons_movil.dart';
 import 'package:untitled3/Widgets/Statics/Static__Colors.dart';
 import 'package:untitled3/Widgets/TextFields__Widget.dart';
 import 'package:untitled3/Widgets/sized__box_Extension.dart';
+
+import '../Register/Core/Login__endpoint.dart';
 
 class Login__Page extends StatefulWidget {
   const Login__Page({super.key});
@@ -16,14 +17,14 @@ class Login__Page extends StatefulWidget {
 }
 
 class _Login__PageState extends State<Login__Page> {
-
   TextEditingController emailcontroller = TextEditingController();
   TextEditingController passwordcontroller = TextEditingController();
 
-void clear_(){
-  emailcontroller.clear();
-  passwordcontroller.clear();
-}
+  void clear_() {
+    emailcontroller.clear();
+    passwordcontroller.clear();
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -127,11 +128,12 @@ void clear_(){
                         height: 40,
                         child: My__Buttons_Movil(
                           textbutton: 'Inicia',
-                          onPressed: ()async {
-                        User _user=User(passwordcontroller.text,
-                            emailcontroller.text);
-                        await login(_user,context);
-                        clear_();
+                          onPressed: () async {
+                            User _user = User.login(
+                                email: emailcontroller.text,
+                                password: passwordcontroller.text);
+                            await login(_user, context);
+                            clear_();
                           },
                         ),
                       ),

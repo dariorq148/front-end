@@ -144,7 +144,12 @@ class _Register__PageState extends State<Register__Page> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => Register__PageT(),
+                                  builder: (context) => Register__PageT(
+                                    name: namecontroller.text,
+                                    lastname: lastnamecontroller.text,
+                                    birthdate: birthdatecontroller.text,
+                                    dni: Dnicontroller.text,
+                                  ),
                                 ));
                           },
                         ),
