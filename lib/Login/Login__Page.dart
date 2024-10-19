@@ -1,13 +1,12 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:untitled3/Models/model__User.dart';
+import 'package:untitled3/Register/Core/Login__endpoint.dart';
 import 'package:untitled3/Register/Register__Page.dart';
 import 'package:untitled3/Widgets/Buttons/My__Buttons_movil.dart';
 import 'package:untitled3/Widgets/Statics/Static__Colors.dart';
 import 'package:untitled3/Widgets/TextFields__Widget.dart';
 import 'package:untitled3/Widgets/sized__box_Extension.dart';
-
-import '../Register/Core/Login__endpoint.dart';
 
 class Login__Page extends StatefulWidget {
   const Login__Page({super.key});
@@ -27,122 +26,129 @@ class _Login__PageState extends State<Login__Page> {
 
   @override
   Widget build(BuildContext context) {
+    
+    double Hsize=MediaQuery.of(context).size.height;
+    double Wsize=MediaQuery.of(context).size.width;
     return SafeArea(
         child: Scaffold(
             body: Center(
-      child: SingleChildScrollView(
-        child: Padding(
-            padding: const EdgeInsets.only(top: 200),
-            child: Stack(
-              children: [
-                /*fondo*/
-                Opacity(opacity: 0.2, child: Image.asset('assets/login.png')),
-                Positioned.fill(
-                  child: ImageFiltered(
-                    imageFilter: ImageFilter.blur(sigmaX: 15, sigmaY: 15),
-                    child: Container(
-                      color: Colors.black.withOpacity(0),
-                    ),
-                  ),
-                ),
-
-                ///aqui
-
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  width: 380,
-                  child: Column(
-                    children: [
-                      /*Titulo*/
-                      Container(
-                        child: Text(
-                          'Iniciar Sesión',
-                          style: TextStyle(color: Colores.color5, fontSize: 25),
+              child: SingleChildScrollView(
+                child: Padding(
+                    padding: const EdgeInsets.only(top: 200),
+                    child: Stack(
+                      children: [
+                        /*fondo*/
+                        Opacity(opacity: 0.2,
+                            child: Image.asset('assets/login.png')),
+                        Positioned.fill(
+                          child: ImageFiltered(
+                            imageFilter: ImageFilter.blur(
+                                sigmaX: 15, sigmaY: 15),
+                            child: Container(
+                              color: Colors.black.withOpacity(0),
+                            ),
+                          ),
                         ),
-                      ),
-                      /*formulario*/
-                      Container(
-                        padding:
-                            EdgeInsets.symmetric(vertical: 25, horizontal: 5),
-                        width: 350,
-                        child: Column(
-                          children: [
-                            Row(
-                              children: [
-                                Icon(Icons.email),
-                                1.kW,
-                                Expanded(
-                                  child: My__Textfields(
-                                      controller: emailcontroller,
-                                      hintText: 'e-mail',
-                                      obscureText: false),
+
+                        ///aqui
+
+                        Container(
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 20, vertical: 10),
+                          width: 380,
+                          child: Column(
+                            children: [
+                              /*Titulo*/
+                              Container(
+                                child: Text(
+                                  'Iniciar Sesión',
+                                  style: TextStyle(
+                                      color: Colores.color5, fontSize: 25),
                                 ),
-                              ],
-                            ),
-                            15.kH,
-                            Row(
-                              children: [
-                                Icon(Icons.password),
-                                1.kW,
-                                Expanded(
-                                  child: My__Textfields(
-                                    controller: passwordcontroller,
-                                    hintText: 'Password',
-                                    obscureText: true,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            15.kH,
-                            /*texto*/
-                            Container(
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text('No tienes cuenta?'),
-                                  2.kW,
-                                  GestureDetector(
-                                    onTap: () {
-                                      Navigator.pushReplacement(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) =>
-                                                Register__Page(),
-                                          ));
-                                    },
-                                    child: Text(
-                                      'inicia aquí',
-                                      style: TextStyle(color: Colores.color6),
-                                    ),
-                                  )
-                                ],
                               ),
-                            ),
-                          ],
+                              /*formulario*/
+                              Container(
+                                padding:
+                                EdgeInsets.symmetric(vertical: 25,
+                                    horizontal: 5),
+                                width: 350,
+                                child: Column(
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Icon(Icons.email),
+                                        1.kW,
+                                        Expanded(
+                                          child: My__Textfields(
+                                              controller: emailcontroller,
+                                              hintText: 'e-mail',
+                                              obscureText: false),
+                                        ),
+                                      ],
+                                    ),
+                                    15.kH,
+                                    Row(
+                                      children: [
+                                        Icon(Icons.password),
+                                        1.kW,
+                                        Expanded(
+                                          child: My__Textfields(
+                                            controller: passwordcontroller,
+                                            hintText: 'Password',
+                                            obscureText: true,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                    15.kH,
+                                    /*texto*/
+                                    Container(
+                                      child: Row(
+                                        mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Text('No tienes cuenta?'),
+                                          2.kW,
+                                          GestureDetector(
+                                            onTap: () {
+                                              Navigator.pushReplacement(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        Register__Page(),
+                                                  ));
+                                            },
+                                            child: Text(
+                                              'inicia aquí',
+                                              style: TextStyle(
+                                                  color: Colores.color6,),
+                                            ),
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              40.kH,
+                              /*boton*/
+                              Container(
+                                height: 40,
+                                child: My__Buttons_Movil(
+                                    textbutton: 'Iniciar Sesion',
+                                    onPressed: () async {
+                                      User user=User.login(email: emailcontroller.text,
+                                          password: passwordcontroller.text);
+                                      await Login(user, context);
+                                    }
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                      40.kH,
-                      /*boton*/
-                      Container(
-                        height: 40,
-                        child: My__Buttons_Movil(
-                          textbutton: 'Inicia',
-                          onPressed: () async {
-                            User _user = User.login(
-                                email: emailcontroller.text,
-                                password: passwordcontroller.text);
-                            await login(_user, context);
-                            clear_();
-                          },
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            )),
-      ),
-    )));
+                      ],
+                    )),
+              ),
+            )));
   }
 }

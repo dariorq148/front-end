@@ -145,10 +145,7 @@ class _Register__PageState extends State<Register__Page> {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) => Register__PageT(
-                                    name: namecontroller.text,
-                                    lastname: lastnamecontroller.text,
-                                    birthdate: birthdatecontroller.text,
-                                    dni: Dnicontroller.text,
+
                                   ),
                                 ));
                           },

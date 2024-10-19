@@ -7,8 +7,9 @@ import 'package:untitled3/Models/model__User.dart';
 import 'package:http/http.dart' as http;
 
 Future<void> register(User user, BuildContext context) async {
-  var url = Uri.parse('http://localhost:3000/api/register');
+  var url = Uri.parse('http://localhost:3000/api/usuario');
   var body = jsonEncode(
+    //cambiar la ciudad a primer lugar
       {
         "nombre": user.name,
         "apellido": user.lastname,

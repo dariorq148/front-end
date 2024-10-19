@@ -15,7 +15,7 @@ class Responsive__Size extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
-    final mobileBreakpoint = 600;
+    final mobileBreakpoint = 500;
     final tabletBreakpoint = 1200;
     if (screenWidth < mobileBreakpoint) {
       return movil;
