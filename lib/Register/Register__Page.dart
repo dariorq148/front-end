@@ -8,6 +8,7 @@ import 'package:untitled3/Widgets/TextFields__Widget.dart';
 import 'package:untitled3/Widgets/sized__box_Extension.dart';
 
 class Register__Page extends StatefulWidget {
+
   const Register__Page({super.key});
 
   @override

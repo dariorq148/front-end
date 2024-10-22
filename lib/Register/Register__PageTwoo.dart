@@ -1,15 +1,26 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:untitled3/Models/model__User.dart';
+import 'package:untitled3/Register/Core/Register__endpoint.dart';
 import 'package:untitled3/Widgets/Buttons/My__Buttons_movil.dart';
 import 'package:untitled3/Widgets/Statics/Static__Colors.dart';
 import 'package:untitled3/Widgets/TextFields__Widget.dart';
 import 'package:untitled3/Widgets/sized__box_Extension.dart';
-class Register__PageT extends StatefulWidget {
 
-  const Register__PageT(
-      {super.key,
-    });
+class Register__PageT extends StatefulWidget {
+ /* final String name;
+  final String lastname;
+  final String bithdate;
+  final String dni;*/
+
+  const Register__PageT({
+    super.key,
+  /*  required this.name,
+    required this.lastname,
+    required this.bithdate,
+    required this.dni,*/
+  });
 
   @override
   State<Register__PageT> createState() => _Register__PageTState();
@@ -20,6 +31,8 @@ class _Register__PageTState extends State<Register__PageT> {
   TextEditingController emailcontroller = TextEditingController();
   TextEditingController passwordcontroller = TextEditingController();
   TextEditingController confirmpasswordcontroller = TextEditingController();
+  TextEditingController city = TextEditingController();
+  TextEditingController direction = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -129,9 +142,9 @@ class _Register__PageTState extends State<Register__PageT> {
                         height: 40,
                         child: My__Buttons_Movil(
                           textbutton: 'Registrar',
-                          onPressed: () async {
-                                             },
+                          onPressed: () {
 
+                          },
                         ),
                       ),
                     ],
