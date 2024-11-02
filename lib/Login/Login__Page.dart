@@ -38,7 +38,8 @@ class _Login__PageState extends State<Login__Page> {
                     child: Stack(
                       children: [
                         /*fondo*/
-                        Opacity(opacity: 0.2,
+                        Opacity(
+                            opacity: 0.2,
                             child: Image.asset('assets/login.png')),
                         Positioned.fill(
                           child: ImageFiltered(
