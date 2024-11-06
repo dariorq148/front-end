@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:untitled3/Home/Home__Page.dart';
 import 'package:untitled3/Models/model__User.dart';
 import 'package:untitled3/Register/Core/Register__endpoint.dart';
 import 'package:untitled3/Widgets/Buttons/My__Buttons_movil.dart';
@@ -9,14 +10,14 @@ import 'package:untitled3/Widgets/TextFields__Widget.dart';
 import 'package:untitled3/Widgets/sized__box_Extension.dart';
 
 class Register__PageT extends StatefulWidget {
- /* final String name;
+  /* final String name;
   final String lastname;
   final String bithdate;
   final String dni;*/
 
   const Register__PageT({
     super.key,
-  /*  required this.name,
+    /*  required this.name,
     required this.lastname,
     required this.bithdate,
     required this.dni,*/
@@ -143,7 +144,11 @@ class _Register__PageTState extends State<Register__PageT> {
                         child: My__Buttons_Movil(
                           textbutton: 'Registrar',
                           onPressed: () {
-
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => Home__Page(),
+                                ));
                           },
                         ),
                       ),
