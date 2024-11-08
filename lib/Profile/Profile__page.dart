@@ -16,8 +16,10 @@ class _Profile__PageState extends State<Profile__Page> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Profile',
-          style: TextStyle(fontSize: responsive.responsiveFontSize(20)),
+          'Perfil',
+          style: TextStyle(
+                fontFamily: 'Poppins',
+              fontSize: responsive.responsiveFontSize(20)),
         ),
       ),
       body: SafeArea(
@@ -49,7 +51,7 @@ class _Profile__PageState extends State<Profile__Page> {
                       ),
                       padding: EdgeInsets.all(responsive.responsiveWidth(2)),
                       decoration: BoxDecoration(
-                        border: Border.all(color: Colors.black12),
+                   /*     border: Border.all(color: Colors.black12),*/
                       ),
                     ),
                   ),
@@ -62,13 +64,15 @@ class _Profile__PageState extends State<Profile__Page> {
                         children: [
                           Padding(
                             padding: const EdgeInsets.only(top: 15),
-                            child: Text('Dario Ramos Quispe',
+                            child: Text('io Ramos ',
                               textAlign: TextAlign.center,
-                              style: TextStyle(fontSize: responsive.responsiveFontSize(20)),),
-                          ), Text('data')],
+                              style: TextStyle(
+                                  fontFamily: 'Poppins',
+                                  fontSize: responsive.responsiveFontSize(20)),),
+                          ), Text('io@gmail.com',style: TextStyle(fontFamily: 'Poppins'),)],
                       ),
                       decoration: BoxDecoration(
-                          border: Border.all(color: Colors.black)),
+                        /*  border: Border.all(color: Colors.black)*/),
                     ),
                   ),
                   Flexible(
@@ -80,7 +84,7 @@ class _Profile__PageState extends State<Profile__Page> {
                               onPressed: () {}, icon: Icon(Icons.edit)),
                         ),
                         decoration: BoxDecoration(
-                            border: Border.all(color: Colors.black))),
+                            /*border: Border.all(color: Colors.black)*/)),
                   )
                 ],
               ),
@@ -94,8 +98,10 @@ class _Profile__PageState extends State<Profile__Page> {
               Padding(
                 padding: const EdgeInsets.only(left: 25),
                 child: Text(
-                  'My Account',
-                  style: TextStyle(fontSize: responsive.responsiveFontSize(20),fontWeight: FontWeight.w600),
+                  'Mi Cuenta',
+                  style: TextStyle(
+                      fontFamily: 'Poppins',
+                      fontSize: responsive.responsiveFontSize(20),fontWeight: FontWeight.w600),
                   textAlign: TextAlign.justify,
                 ),
               ),
@@ -115,8 +121,9 @@ class _Profile__PageState extends State<Profile__Page> {
                         child: ListTile(
                           leading: Icon(Icons.add_location_alt),
                           title: Text(
-                            'Location',
+                            'Ubicacion',
                             textAlign: TextAlign.center,
+                            style: TextStyle(fontFamily: 'Poppins'),
                           ),
                           trailing: Icon(Icons.arrow_forward_ios_rounded),
                         ),
@@ -126,7 +133,7 @@ class _Profile__PageState extends State<Profile__Page> {
                         child: ListTile(
                           leading: Icon(Icons.paypal_outlined),
                           title: Text(
-                            'Payment',
+                            'Pagos',    style: TextStyle(fontFamily: 'Poppins'),
                             textAlign: TextAlign.center,
                           ),
                           trailing: Icon(Icons.arrow_forward_ios_rounded),
@@ -137,7 +144,8 @@ class _Profile__PageState extends State<Profile__Page> {
                         child: ListTile(
                           leading: Icon(Icons.handshake),
                           title: Text(
-                            'Others',
+                            'Otros',
+                            style: TextStyle(fontFamily: 'Poppins'),
                             textAlign: TextAlign.center,
                           ),
                           trailing: Icon(Icons.arrow_forward_ios_rounded),
@@ -150,7 +158,8 @@ class _Profile__PageState extends State<Profile__Page> {
                           child: ListTile(
                             leading: Icon(Icons.add_call),
                             title: Text(
-                              'Help Center',
+                              style: TextStyle(fontFamily: 'Poppins'),
+                              'Centro de Ayuda',
                               textAlign: TextAlign.center,
                             ),
                             trailing: Icon(Icons.arrow_forward_ios_rounded),
@@ -172,11 +181,12 @@ class _Profile__PageState extends State<Profile__Page> {
                   child: TextButton(
                     onPressed: () {},
                     child: Text(
-                      'Logout',
+                      'Cerrar Sesion',
                       style: TextStyle(
+                          fontFamily: 'Poppins',
                           letterSpacing: 5,
                           fontWeight: FontWeight.bold,
-                          fontSize: 20),
+                          fontSize: 18),
                     ),
                     style: ButtonStyle(
                         shape: MaterialStatePropertyAll(RoundedRectangleBorder(

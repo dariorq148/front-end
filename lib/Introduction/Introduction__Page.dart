@@ -40,19 +40,19 @@ class Introduction__Page extends StatelessWidget {
               ),
               pages: [
                 PageViewModel(
-                    title: 'Bienvenido a Chozaware!!!',
+                    title: 'Bienvenido a !!!',
                     image: Image.asset('assets/intro1.png'),
                     body: ''),
                 PageViewModel(
                   reverse: true,
                   useScrollView: true,
-                  title: 'Bienvenido a Chozaware!!!',
+                  title: 'Bienvenido a !!!',
                   image: Image.asset('assets/intro2.png'),
                   body: '',
                 ),
                 PageViewModel(
                     reverse: true,
-                    title: 'Bienvenido a Chozaware!!!',
+                    title: 'Bienvenido a !!!',
                     image: Image.asset('assets/intro3.png'),
                     body: '',
                     footer: Center(
