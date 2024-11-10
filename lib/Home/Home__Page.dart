@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:untitled3/ESPECIALIDA.dart';
 import 'package:untitled3/Profile/Profile__page.dart';
@@ -72,33 +74,97 @@ class _Home__PageState extends State<Home__Page> {
 
                 ///carrusel slider
                 Container(
-                  height: 300,
+                  height: 225,
                   child: CarouselView(
-                    itemExtent: 250,
+                    itemExtent: 300,
+                    shrinkExtent: 300,
+                    itemSnapping: true,
                     scrollDirection: Axis.horizontal,
                     children: [
                       //anuncios - ofertas
                       Container(
                         width: 400,
-                        height: 200,
+                        height: 180,
                         decoration: BoxDecoration(
-                            color: Color(0xFFF5BCBA),
+                          borderRadius: BorderRadius.circular(25),
+                        ),
+                        child: Stack(
+                          children: [
+
+                            Positioned.fill(
+                              child: ImageFiltered(
+                                imageFilter: ImageFilter.blur(sigmaX: 1, sigmaY: 1), // Valores de desenfoque (ajústalos según sea necesario)
+                                child: Image.asset(
+                                  'assets/tarjeta.png',
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+
+                            Center(
+                              child: Text(
+                                '¡Cámbiate a Premium!',
+                                style: TextStyle(
+                                  fontFamily: 'Poppins',
+                                  fontSize: 24,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      //redes sociales
+                      Container(
+                        child: Padding(
+                          padding: EdgeInsets.all(2),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Text(
+                                'Visita Nuestras \nRedes Sociales',
+                                style: TextStyle(
+                                  fontFamily: 'Poppins', /*fontSize: 15*/
+                                ),
+                              ),
+                              Column(
+                                children: [
+                                  Image.asset(
+                                    'assets/fb.png',
+                                    width: 50,
+                                    height: 50,
+                                  ),
+                                  Image.asset(
+                                    'assets/wtp.png',
+                                    width: 50,
+                                    height: 50,
+                                  ),
+                                  Image.asset(
+                                    'assets/ig.png',
+                                    width: 100,
+                                    height: 100,
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
+                        ),
+                        width: 400,
+                        height: 180,
+                        decoration: BoxDecoration(
+                            /* image: DecorationImage(image: AssetImage('assets/fb.png'),
+                          ),*/
+                           /* color: Color(0xFFE3AADD),*/
                             borderRadius: BorderRadius.circular(25)),
                       ),
                       Container(
                         width: 400,
-                        height: 200,
+                        height: 180,
                         decoration: BoxDecoration(
                             color: Color(0xFFE3AADD),
                             borderRadius: BorderRadius.circular(25)),
                       ),
-                      Container(
-                        width: 400,
-                        height: 200,
-                        decoration: BoxDecoration(
-                            color: Color(0xFFE3AADD),
-                            borderRadius: BorderRadius.circular(25)),
-                      )
                     ],
                   ),
                 ),
@@ -176,10 +242,12 @@ class _Home__PageState extends State<Home__Page> {
                                 color: Color(0xFFC8A8E9),
                                 borderRadius: BorderRadius.circular(360)),
                           ),
-                          Text('Cardiologia',
+                          Text(
+                            'Cardiologia',
                             style: TextStyle(
-                            fontFamily: 'Poppins',
-                          ),)
+                              fontFamily: 'Poppins',
+                            ),
+                          )
                         ],
                       ),
                       SizedBox(
@@ -199,9 +267,12 @@ class _Home__PageState extends State<Home__Page> {
                                 color: Color(0xFFC8A8E9),
                                 borderRadius: BorderRadius.circular(360)),
                           ),
-                          Text('Neurologia', style: TextStyle(
-                            fontFamily: 'Poppins',
-                          ),)
+                          Text(
+                            'Neurologia',
+                            style: TextStyle(
+                              fontFamily: 'Poppins',
+                            ),
+                          )
                         ],
                       ),
                       SizedBox(
@@ -221,9 +292,12 @@ class _Home__PageState extends State<Home__Page> {
                                 color: Color(0xFFC8A8E9),
                                 borderRadius: BorderRadius.circular(360)),
                           ),
-                          Text('Urologia', style: TextStyle(
-                            fontFamily: 'Poppins',
-                          ),)
+                          Text(
+                            'Urologia',
+                            style: TextStyle(
+                              fontFamily: 'Poppins',
+                            ),
+                          )
                         ],
                       ),
                       SizedBox(
@@ -243,9 +317,12 @@ class _Home__PageState extends State<Home__Page> {
                                 color: Color(0xFFC8A8E9),
                                 borderRadius: BorderRadius.circular(360)),
                           ),
-                          Text('Traumatologia', style: TextStyle(
-                            fontFamily: 'Poppins',
-                          ),)
+                          Text(
+                            'Traumatologia',
+                            style: TextStyle(
+                              fontFamily: 'Poppins',
+                            ),
+                          )
                         ],
                       ),
                       SizedBox(
@@ -265,9 +342,12 @@ class _Home__PageState extends State<Home__Page> {
                                 color: Color(0xFFC8A8E9),
                                 borderRadius: BorderRadius.circular(360)),
                           ),
-                          Text('Dermatología6', style: TextStyle(
-                            fontFamily: 'Poppins',
-                          ),)
+                          Text(
+                            'Dermatología6',
+                            style: TextStyle(
+                              fontFamily: 'Poppins',
+                            ),
+                          )
                         ],
                       ),
                       SizedBox(
@@ -287,9 +367,12 @@ class _Home__PageState extends State<Home__Page> {
                                 color: Color(0xFFC8A8E9),
                                 borderRadius: BorderRadius.circular(360)),
                           ),
-                          Text('Anestesiología', style: TextStyle(
-                            fontFamily: 'Poppins',
-                          ),)
+                          Text(
+                            'Anestesiología',
+                            style: TextStyle(
+                              fontFamily: 'Poppins',
+                            ),
+                          )
                         ],
                       ),
                       SizedBox(
@@ -309,15 +392,17 @@ class _Home__PageState extends State<Home__Page> {
                                 color: Color(0xFFC8A8E9),
                                 borderRadius: BorderRadius.circular(360)),
                           ),
-                          Text('Optalmologia', style: TextStyle(
-                            fontFamily: 'Poppins',
-                          ),)
+                          Text(
+                            'Optalmologia',
+                            style: TextStyle(
+                              fontFamily: 'Poppins',
+                            ),
+                          )
                         ],
                       ),
                     ],
                   ),
                 ),
-
 
                 ///doctores y mas
                 Container(
@@ -327,8 +412,9 @@ class _Home__PageState extends State<Home__Page> {
                       Text(
                         'Nuestros \nEspecialistas',
                         style: TextStyle(
-                          fontFamily: 'Poppins',
-                            fontSize: 18, fontWeight: FontWeight.w600),
+                            fontFamily: 'Poppins',
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600),
                       ),
                       Container(
                         width: 80,
@@ -337,8 +423,9 @@ class _Home__PageState extends State<Home__Page> {
                             child: Text(
                           'Ver Todo',
                           style: TextStyle(
-                            fontFamily: 'Poppins',
-                              fontSize: 15, fontWeight: FontWeight.w400),
+                              fontFamily: 'Poppins',
+                              fontSize: 15,
+                              fontWeight: FontWeight.w400),
                         )),
                         decoration: BoxDecoration(
                             color: Color(0xFFE3AADD),
@@ -366,10 +453,12 @@ class _Home__PageState extends State<Home__Page> {
                                   borderRadius: BorderRadius.circular(360),
                                   child: Image.asset('assets/hermosa.jpg'),
                                 ),
-                                Text('Doctora Xxx ' ,
+                                Text(
+                                  'Doctora Xxx ',
                                   style: TextStyle(
-                                  fontFamily: 'Poppins',
-                                ),),
+                                    fontFamily: 'Poppins',
+                                  ),
+                                ),
                               ],
                             ),
                             decoration: BoxDecoration(
@@ -387,11 +476,12 @@ class _Home__PageState extends State<Home__Page> {
                               children: [
                                 ClipRRect(
                                   borderRadius: BorderRadius.circular(360),
-                                   child: Image.asset('assets/hermosa.jpg'),
+                                  child: Image.asset('assets/hermosa.jpg'),
                                 ),
-                                  Text('Doctora Xxx ',style: TextStyle(
-                                    fontFamily: 'Poppins',
-                                  )),
+                                Text('Doctora Xxx ',
+                                    style: TextStyle(
+                                      fontFamily: 'Poppins',
+                                    )),
                               ],
                             ),
                             decoration: BoxDecoration(

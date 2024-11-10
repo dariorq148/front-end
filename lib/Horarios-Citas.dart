@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
+import 'package:untitled3/Cita_Confirmada.dart';
 
 class CalendarioCitas extends StatefulWidget {
   const CalendarioCitas({super.key});
@@ -30,6 +31,10 @@ class _CalendarioCitasState extends State<CalendarioCitas> {
           padding: const EdgeInsets.symmetric(horizontal: 25),
           child: Column(
             children: [
+             /* Text('Selecciona un dia',style: TextStyle(
+                fontFamily: 'Poppins',
+                fontSize: 18
+              ),),*/
               // Calendario
               Container(
                 child: TableCalendar(
@@ -417,7 +422,7 @@ class _CalendarioCitasState extends State<CalendarioCitas> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => CalendarioCitas(),
+                          builder: (context) => DetalleCitaPage(),
                         ));
                   },
                   child: Text(

@@ -125,10 +125,10 @@ class _Register__PageState extends State<Register__Page> {
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Text(
+                                 /* Text(
                                     'Ya casi terminas!!!',
                                     style: TextStyle(fontSize: 20),
-                                  ),
+                                  ),*/
                                 ],
                               ),
                             ),

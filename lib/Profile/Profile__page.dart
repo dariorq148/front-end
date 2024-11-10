@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled3/Editar_Perfil.dart';
 
 import '../Responsive/Responsive__Size.dart';
 
@@ -18,7 +19,7 @@ class _Profile__PageState extends State<Profile__Page> {
         title: Text(
           'Perfil',
           style: TextStyle(
-                fontFamily: 'Poppins',
+              fontFamily: 'Poppins',
               fontSize: responsive.responsiveFontSize(20)),
         ),
       ),
@@ -51,8 +52,8 @@ class _Profile__PageState extends State<Profile__Page> {
                       ),
                       padding: EdgeInsets.all(responsive.responsiveWidth(2)),
                       decoration: BoxDecoration(
-                   /*     border: Border.all(color: Colors.black12),*/
-                      ),
+                          /*     border: Border.all(color: Colors.black12),*/
+                          ),
                     ),
                   ),
                   //nombre usuario
@@ -64,15 +65,22 @@ class _Profile__PageState extends State<Profile__Page> {
                         children: [
                           Padding(
                             padding: const EdgeInsets.only(top: 15),
-                            child: Text('io Ramos ',
+                            child: Text(
+                              'io Ramos ',
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                   fontFamily: 'Poppins',
-                                  fontSize: responsive.responsiveFontSize(20)),),
-                          ), Text('io@gmail.com',style: TextStyle(fontFamily: 'Poppins'),)],
+                                  fontSize: responsive.responsiveFontSize(20)),
+                            ),
+                          ),
+                          Text(
+                            'io@gmail.com',
+                            style: TextStyle(fontFamily: 'Poppins'),
+                          )
+                        ],
                       ),
                       decoration: BoxDecoration(
-                        /*  border: Border.all(color: Colors.black)*/),
+                          /*  border: Border.all(color: Colors.black)*/),
                     ),
                   ),
                   Flexible(
@@ -81,7 +89,14 @@ class _Profile__PageState extends State<Profile__Page> {
                         height: responsive.responsiveHeight(100),
                         child: Center(
                           child: IconButton(
-                              onPressed: () {}, icon: Icon(Icons.edit)),
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => EditarPerfil(),
+                                    ));
+                              },
+                              icon: Icon(Icons.edit)),
                         ),
                         decoration: BoxDecoration(
                             /*border: Border.all(color: Colors.black)*/)),
@@ -101,7 +116,8 @@ class _Profile__PageState extends State<Profile__Page> {
                   'Mi Cuenta',
                   style: TextStyle(
                       fontFamily: 'Poppins',
-                      fontSize: responsive.responsiveFontSize(20),fontWeight: FontWeight.w600),
+                      fontSize: responsive.responsiveFontSize(20),
+                      fontWeight: FontWeight.w600),
                   textAlign: TextAlign.justify,
                 ),
               ),
@@ -119,9 +135,9 @@ class _Profile__PageState extends State<Profile__Page> {
                       GestureDetector(
                         onTap: () {},
                         child: ListTile(
-                          leading: Icon(Icons.add_location_alt),
+                          leading: Icon(Icons.translate),
                           title: Text(
-                            'Ubicacion',
+                            'Idioma',
                             textAlign: TextAlign.center,
                             style: TextStyle(fontFamily: 'Poppins'),
                           ),
@@ -131,9 +147,10 @@ class _Profile__PageState extends State<Profile__Page> {
                       GestureDetector(
                         onTap: () {},
                         child: ListTile(
-                          leading: Icon(Icons.paypal_outlined),
+                          leading: Icon(Icons.work_history),
                           title: Text(
-                            'Pagos',    style: TextStyle(fontFamily: 'Poppins'),
+                            'Historial de Citas',
+                            style: TextStyle(fontFamily: 'Poppins'),
                             textAlign: TextAlign.center,
                           ),
                           trailing: Icon(Icons.arrow_forward_ios_rounded),
@@ -174,7 +191,7 @@ class _Profile__PageState extends State<Profile__Page> {
 
               Padding(
                 padding:
-                const EdgeInsets.symmetric(horizontal: 25, vertical: 150),
+                    const EdgeInsets.symmetric(horizontal: 25, vertical: 150),
                 child: Container(
                   width: double.maxFinite,
                   height: responsive.responsiveHeight(50),
@@ -190,12 +207,12 @@ class _Profile__PageState extends State<Profile__Page> {
                     ),
                     style: ButtonStyle(
                         shape: MaterialStatePropertyAll(RoundedRectangleBorder(
-                          side: BorderSide(
-                            color: Colors.black,
-                            width: 1,
-                          ),
-                          borderRadius: BorderRadius.circular(8),
-                        ))),
+                      side: BorderSide(
+                        color: Colors.black,
+                        width: 1,
+                      ),
+                      borderRadius: BorderRadius.circular(8),
+                    ))),
                   ),
                 ),
               ),
