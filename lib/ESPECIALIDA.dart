@@ -13,7 +13,7 @@ class _EspecialidadState extends State<Especialidad> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Cardiologia',
           style: TextStyle(
             fontFamily: 'Poppins',
@@ -28,24 +28,24 @@ class _EspecialidadState extends State<Especialidad> {
               //foto especialidad
               Container(
                 height: MediaQuery.of(context).size.height * 0.4,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(25),
+                    color: const Color(0xFFC8A8E9)),
                 child: Image.asset(
                   'assets/Cardiologia.png',
                   fit: BoxFit.contain,
                 ),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(25),
-                    color: Color(0xFFC8A8E9)),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
 
               /// descripcion espcialidad
-              Container(
+              SizedBox(
                 height: MediaQuery.of(context).size.height * 0.3,
                 child: Column(
                   children: [
-                    Row(
+                    const Row(
                       children: [
                         Text(
                           'Descripcion',
@@ -56,20 +56,20 @@ class _EspecialidadState extends State<Especialidad> {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     ///descripcion del servicio
                     Container(
-                      padding: EdgeInsets.all(25),
-                      child: Text(
-                          'Nuestro servicio de Cardiología ofrece una atención integral para el diagnóstico y tratamiento de enfermedades del corazón y el sistema circulatorio. Contamos con especialistas altamente calificados y la última tecnología en equipos de monitoreo y diagnóstico, para brindarte el cuidado preciso y personalizado que necesitas.',
-                      style: TextStyle(fontFamily: 'Poppins'),
-                      ),
+                      padding: const EdgeInsets.all(25),
                       height: MediaQuery.of(context).size.height * 0.2,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
-                        color: Color(0xFFC8A8E9),
+                        color: const Color(0xFFC8A8E9),
+                      ),
+                      child: const Text(
+                          'Nuestro servicio de Cardiología ofrece una atención integral para el diagnóstico y tratamiento de enfermedades del corazón y el sistema circulatorio. Contamos con especialistas altamente calificados y la última tecnología en equipos de monitoreo y diagnóstico, para brindarte el cuidado preciso y personalizado que necesitas.',
+                      style: TextStyle(fontFamily: 'Poppins'),
                       ),
                     ),
                   ],
@@ -77,7 +77,7 @@ class _EspecialidadState extends State<Especialidad> {
               ),
               //doctores de especialidad
               Container(
-                child: Row(
+                child: const Row(
                   children: [
                     Text(
                       'Especialistas en Cardiologia',
@@ -89,11 +89,11 @@ class _EspecialidadState extends State<Especialidad> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 25,
               ),
 
-              Container(
+              SizedBox(
                 height: 150,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
@@ -104,7 +104,7 @@ class _EspecialidadState extends State<Especialidad> {
                           width: 100,
                           height: 100,
                           decoration: BoxDecoration(
-                            color: Color(0xFFC8A8E9),
+                            color: const Color(0xFFC8A8E9),
                             borderRadius: BorderRadius.circular(360),
                           ),
                           child: ClipRRect(
@@ -115,7 +115,7 @@ class _EspecialidadState extends State<Especialidad> {
                             ),
                           ),
                         ),
-                        Text(
+                        const Text(
                           'Doc. Maria Aguilar X',
                           style: TextStyle(
                             fontFamily: 'Poppins',
@@ -123,7 +123,7 @@ class _EspecialidadState extends State<Especialidad> {
                         )
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 30,
                     ),
                     Column(
@@ -132,7 +132,7 @@ class _EspecialidadState extends State<Especialidad> {
                           width: 100,
                           height: 100,
                           decoration: BoxDecoration(
-                            color: Color(0xFFC8A8E9),
+                            color: const Color(0xFFC8A8E9),
                             borderRadius: BorderRadius.circular(360),
                           ),
                           child: ClipRRect(
@@ -143,7 +143,7 @@ class _EspecialidadState extends State<Especialidad> {
                             ),
                           ),
                         ),
-                        Text(
+                        const Text(
                           'Doc. Maria Aguilar X',
                           style: TextStyle(
                             fontFamily: 'Poppins',
@@ -151,7 +151,7 @@ class _EspecialidadState extends State<Especialidad> {
                         )
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 30,
                     ),
                     Column(
@@ -160,7 +160,7 @@ class _EspecialidadState extends State<Especialidad> {
                           width: 100,
                           height: 100,
                           decoration: BoxDecoration(
-                            color: Color(0xFFC8A8E9),
+                            color: const Color(0xFFC8A8E9),
                             borderRadius: BorderRadius.circular(360),
                           ),
                           child: ClipRRect(
@@ -171,7 +171,7 @@ class _EspecialidadState extends State<Especialidad> {
                             ),
                           ),
                         ),
-                        Text(
+                        const Text(
                           'Doc. Maria Aguilar X',
                           style: TextStyle(
                             fontFamily: 'Poppins',
@@ -179,7 +179,7 @@ class _EspecialidadState extends State<Especialidad> {
                         )
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 30,
                     ),
                     Column(
@@ -188,7 +188,7 @@ class _EspecialidadState extends State<Especialidad> {
                           width: 100,
                           height: 100,
                           decoration: BoxDecoration(
-                            color: Color(0xFFC8A8E9),
+                            color: const Color(0xFFC8A8E9),
                             borderRadius: BorderRadius.circular(360),
                           ),
                           child: ClipRRect(
@@ -199,7 +199,7 @@ class _EspecialidadState extends State<Especialidad> {
                             ),
                           ),
                         ),
-                        Text(
+                        const Text(
                           'Doc. Maria Aguilar X',
                           style: TextStyle(
                             fontFamily: 'Poppins',
@@ -207,7 +207,7 @@ class _EspecialidadState extends State<Especialidad> {
                         )
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 30,
                     ),
                     Column(
@@ -216,7 +216,7 @@ class _EspecialidadState extends State<Especialidad> {
                           width: 100,
                           height: 100,
                           decoration: BoxDecoration(
-                            color: Color(0xFFC8A8E9),
+                            color: const Color(0xFFC8A8E9),
                             borderRadius: BorderRadius.circular(360),
                           ),
                           child: ClipRRect(
@@ -227,7 +227,7 @@ class _EspecialidadState extends State<Especialidad> {
                             ),
                           ),
                         ),
-                        Text(
+                        const Text(
                           'Doc. Maria Aguilar X',
                           style: TextStyle(
                             fontFamily: 'Poppins',
@@ -235,7 +235,7 @@ class _EspecialidadState extends State<Especialidad> {
                         )
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 30,
                     ),
                     Column(
@@ -244,7 +244,7 @@ class _EspecialidadState extends State<Especialidad> {
                           width: 100,
                           height: 100,
                           decoration: BoxDecoration(
-                            color: Color(0xFFC8A8E9),
+                            color: const Color(0xFFC8A8E9),
                             borderRadius: BorderRadius.circular(360),
                           ),
                           child: ClipRRect(
@@ -255,7 +255,7 @@ class _EspecialidadState extends State<Especialidad> {
                             ),
                           ),
                         ),
-                        Text(
+                        const Text(
                           'Doc. Maria Aguilar X',
                           style: TextStyle(
                             fontFamily: 'Poppins',
@@ -263,7 +263,7 @@ class _EspecialidadState extends State<Especialidad> {
                         )
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 30,
                     ),
                     Column(
@@ -272,7 +272,7 @@ class _EspecialidadState extends State<Especialidad> {
                           width: 100,
                           height: 100,
                           decoration: BoxDecoration(
-                            color: Color(0xFFC8A8E9),
+                            color: const Color(0xFFC8A8E9),
                             borderRadius: BorderRadius.circular(360),
                           ),
                           child: ClipRRect(
@@ -283,7 +283,7 @@ class _EspecialidadState extends State<Especialidad> {
                             ),
                           ),
                         ),
-                        Text(
+                        const Text(
                           'Doc. Maria Aguilar X',
                           style: TextStyle(
                             fontFamily: 'Poppins',
@@ -294,7 +294,7 @@ class _EspecialidadState extends State<Especialidad> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
 
@@ -302,28 +302,28 @@ class _EspecialidadState extends State<Especialidad> {
               Container(
                 width: double.maxFinite,
                 height: 50,
+                decoration: BoxDecoration(
+                    color: Colors.amber,
+                    borderRadius: BorderRadius.circular(15)),
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => CalendarioCitas(),
+                          builder: (context) => const CalendarioCitas(),
                         ));
                   },
-                  child: Text(
+                  style: ButtonStyle(
+                      shape: WidgetStatePropertyAll(RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5)))),
+                  child: const Text(
                     'Agendar Cita',
                     style: TextStyle(
                         fontFamily: 'Poppins', fontSize: 25, letterSpacing: 2),
                   ),
-                  style: ButtonStyle(
-                      shape: WidgetStatePropertyAll(RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5)))),
                 ),
-                decoration: BoxDecoration(
-                    color: Colors.amber,
-                    borderRadius: BorderRadius.circular(15)),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 25,
               )
             ],

@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:untitled3/ESPECIALIDA.dart';
 import 'package:untitled3/Profile/Profile__page.dart';
+import 'package:untitled3/Responsive/Responsive__Size.dart';
 
 class Home__Page extends StatefulWidget {
   const Home__Page({super.key});
@@ -14,6 +15,7 @@ class Home__Page extends StatefulWidget {
 class _Home__PageState extends State<Home__Page> {
   @override
   Widget build(BuildContext context) {
+    final Responsive responsive=Responsive(context);
     return Scaffold(
       appBar: AppBar(),
       body: SingleChildScrollView(
@@ -25,8 +27,8 @@ class _Home__PageState extends State<Home__Page> {
             child: Column(
               children: [
                 Container(
-                  padding: EdgeInsets.all(5),
-                  decoration: BoxDecoration(
+                  padding: const EdgeInsets.all(5),
+                  decoration: const BoxDecoration(
                       /* border:
                       Border.all(color: Colors.black26)*/
                       ),
@@ -39,12 +41,12 @@ class _Home__PageState extends State<Home__Page> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => Profile__Page(),
+                                builder: (context) => const Profile__Page(),
                               ));
                         },
                         child: Container(
-                          width: 80,
-                          height: 80,
+                          width: responsive.responsiveWidth(50),
+                          height:  responsive.responsiveHeight(50),
                           decoration: BoxDecoration(
                               color: Colors.black87,
                               borderRadius: BorderRadius.circular(360)),
@@ -55,25 +57,25 @@ class _Home__PageState extends State<Home__Page> {
                           child: Container(
                         child: Text(
                           'Hola io Ramos',
-                          style: TextStyle(fontFamily: 'Poppins'),
+                          style: TextStyle(fontFamily: 'Poppins',fontSize: responsive.responsiveFontSize(15)),
                         ),
                       )),
                       //notificaciones
                       Container(
-                        child: IconButton(
-                            onPressed: () {}, icon: Icon(Icons.notifications)),
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(25)),
+                        child: IconButton(
+                            onPressed: () {}, icon: const Icon(Icons.notifications)),
                       )
                     ],
                   ),
                 ),
                 SizedBox(
-                  height: 25,
+                  height: responsive.responsiveHeight(1),
                 ),
 
                 ///carrusel slider
-                Container(
+                SizedBox(
                   height: 225,
                   child: CarouselView(
                     itemExtent: 300,
@@ -93,7 +95,7 @@ class _Home__PageState extends State<Home__Page> {
 
                             Positioned.fill(
                               child: ImageFiltered(
-                                imageFilter: ImageFilter.blur(sigmaX: 1, sigmaY: 1), // Valores de desenfoque (ajústalos según sea necesario)
+                                imageFilter: ImageFilter.blur(sigmaX: 1, sigmaY: 1),
                                 child: Image.asset(
                                   'assets/tarjeta.png',
                                   fit: BoxFit.cover,
@@ -106,7 +108,7 @@ class _Home__PageState extends State<Home__Page> {
                                 '¡Cámbiate a Premium!',
                                 style: TextStyle(
                                   fontFamily: 'Poppins',
-                                  fontSize: 24,
+                                  fontSize: responsive.responsiveFontSize(18),
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -117,15 +119,23 @@ class _Home__PageState extends State<Home__Page> {
                       ),
                       //redes sociales
                       Container(
+                        width: 400,
+                        height: 180,
+                        decoration: BoxDecoration(
+                            /* image: DecorationImage(image: AssetImage('assets/fb.png'),
+                          ),*/
+                           /* color: Color(0xFFE3AADD),*/
+                            borderRadius: BorderRadius.circular(25)),
                         child: Padding(
-                          padding: EdgeInsets.all(2),
+                          padding: const EdgeInsets.all(2),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
-                              Text(
+                              const Text(
                                 'Visita Nuestras \nRedes Sociales',
                                 style: TextStyle(
-                                  fontFamily: 'Poppins', /*fontSize: 15*/
+                                  fontFamily: 'Poppins',
+                                    fontSize: 15
                                 ),
                               ),
                               Column(
@@ -150,30 +160,23 @@ class _Home__PageState extends State<Home__Page> {
                             ],
                           ),
                         ),
-                        width: 400,
-                        height: 180,
-                        decoration: BoxDecoration(
-                            /* image: DecorationImage(image: AssetImage('assets/fb.png'),
-                          ),*/
-                           /* color: Color(0xFFE3AADD),*/
-                            borderRadius: BorderRadius.circular(25)),
                       ),
                       Container(
                         width: 400,
                         height: 180,
                         decoration: BoxDecoration(
-                            color: Color(0xFFE3AADD),
+                            color: const Color(0xFFE3AADD),
                             borderRadius: BorderRadius.circular(25)),
                       ),
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 25,
                 ),
                 // titulos especialidades
                 Container(
-                  padding: EdgeInsets.only(left: 15, right: 15),
+                  padding: const EdgeInsets.only(left: 15, right: 15),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -182,7 +185,7 @@ class _Home__PageState extends State<Home__Page> {
                           'Especidalidades',
                           style: TextStyle(
                               fontFamily: 'Poppins',
-                              fontSize: 18,
+                              fontSize: responsive.responsiveFontSize(15),
                               fontWeight: FontWeight.w600),
                         ),
                       ),
@@ -193,56 +196,56 @@ class _Home__PageState extends State<Home__Page> {
                         child: Container(
                           width: 80,
                           height: 30,
+                          decoration: BoxDecoration(
+                              color: const Color(0xFFE3AADD),
+                              borderRadius: BorderRadius.circular(25)),
                           child: Center(
                               child: Text(
                             'Ver Todo',
                             style: TextStyle(
-                              fontFamily: 'Poppins',
+                              fontFamily: 'Poppins',fontSize: responsive.responsiveFontSize(15),
                             ),
                           )),
-                          decoration: BoxDecoration(
-                              color: Color(0xFFE3AADD),
-                              borderRadius: BorderRadius.circular(25)),
                         ),
                       ),
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 25,
                 ),
 
                 ///especialidades
-                Container(
-                  height: 150,
+                SizedBox(
+                  height: responsive.responsiveHeight(125),
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: [
                       //especialidad 1 ...
                       Column(
                         children: [
-                          SizedBox(
+                          const SizedBox(
                             width: 30,
                           ),
                           //bolita
                           Container(
-                            padding: EdgeInsets.all(5),
+                            padding: const EdgeInsets.all(5),
                             height: 70,
                             width: 70,
+                            decoration: BoxDecoration(
+                                color: const Color(0xFFC8A8E9),
+                                borderRadius: BorderRadius.circular(360)),
                             child: IconButton(
                                 onPressed: () {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => Especialidad(),
+                                        builder: (context) => const Especialidad(),
                                       ));
                                 },
-                                icon: Icon(Icons.monitor_heart_outlined)),
-                            decoration: BoxDecoration(
-                                color: Color(0xFFC8A8E9),
-                                borderRadius: BorderRadius.circular(360)),
+                                icon: const Icon(Icons.monitor_heart_outlined)),
                           ),
-                          Text(
+                          const Text(
                             'Cardiologia',
                             style: TextStyle(
                               fontFamily: 'Poppins',
@@ -250,24 +253,24 @@ class _Home__PageState extends State<Home__Page> {
                           )
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 30,
                       ),
                       Column(
                         children: [
                           //bolita
                           Container(
-                            padding: EdgeInsets.all(5),
+                            padding: const EdgeInsets.all(5),
                             height: 70,
                             width: 70,
+                            decoration: BoxDecoration(
+                                color: const Color(0xFFC8A8E9),
+                                borderRadius: BorderRadius.circular(360)),
                             child: IconButton(
                                 onPressed: () {},
-                                icon: Icon(Icons.monitor_heart_outlined)),
-                            decoration: BoxDecoration(
-                                color: Color(0xFFC8A8E9),
-                                borderRadius: BorderRadius.circular(360)),
+                                icon: const Icon(Icons.monitor_heart_outlined)),
                           ),
-                          Text(
+                          const Text(
                             'Neurologia',
                             style: TextStyle(
                               fontFamily: 'Poppins',
@@ -275,24 +278,24 @@ class _Home__PageState extends State<Home__Page> {
                           )
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 30,
                       ),
                       Column(
                         children: [
                           //bolita
                           Container(
-                            padding: EdgeInsets.all(5),
+                            padding: const EdgeInsets.all(5),
                             height: 70,
                             width: 70,
+                            decoration: BoxDecoration(
+                                color: const Color(0xFFC8A8E9),
+                                borderRadius: BorderRadius.circular(360)),
                             child: IconButton(
                                 onPressed: () {},
-                                icon: Icon(Icons.monitor_heart_outlined)),
-                            decoration: BoxDecoration(
-                                color: Color(0xFFC8A8E9),
-                                borderRadius: BorderRadius.circular(360)),
+                                icon: const Icon(Icons.monitor_heart_outlined)),
                           ),
-                          Text(
+                          const Text(
                             'Urologia',
                             style: TextStyle(
                               fontFamily: 'Poppins',
@@ -300,24 +303,24 @@ class _Home__PageState extends State<Home__Page> {
                           )
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 30,
                       ),
                       Column(
                         children: [
                           //bolita
                           Container(
-                            padding: EdgeInsets.all(5),
+                            padding: const EdgeInsets.all(5),
                             height: 70,
                             width: 70,
+                            decoration: BoxDecoration(
+                                color: const Color(0xFFC8A8E9),
+                                borderRadius: BorderRadius.circular(360)),
                             child: IconButton(
                                 onPressed: () {},
-                                icon: Icon(Icons.monitor_heart_outlined)),
-                            decoration: BoxDecoration(
-                                color: Color(0xFFC8A8E9),
-                                borderRadius: BorderRadius.circular(360)),
+                                icon: const Icon(Icons.monitor_heart_outlined)),
                           ),
-                          Text(
+                          const Text(
                             'Traumatologia',
                             style: TextStyle(
                               fontFamily: 'Poppins',
@@ -325,24 +328,24 @@ class _Home__PageState extends State<Home__Page> {
                           )
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 30,
                       ),
                       Column(
                         children: [
                           //bolita
                           Container(
-                            padding: EdgeInsets.all(5),
+                            padding: const EdgeInsets.all(5),
                             height: 70,
                             width: 70,
+                            decoration: BoxDecoration(
+                                color: const Color(0xFFC8A8E9),
+                                borderRadius: BorderRadius.circular(360)),
                             child: IconButton(
                                 onPressed: () {},
-                                icon: Icon(Icons.monitor_heart_outlined)),
-                            decoration: BoxDecoration(
-                                color: Color(0xFFC8A8E9),
-                                borderRadius: BorderRadius.circular(360)),
+                                icon: const Icon(Icons.monitor_heart_outlined)),
                           ),
-                          Text(
+                          const Text(
                             'Dermatología6',
                             style: TextStyle(
                               fontFamily: 'Poppins',
@@ -350,24 +353,24 @@ class _Home__PageState extends State<Home__Page> {
                           )
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 30,
                       ),
                       Column(
                         children: [
                           //bolita
                           Container(
-                            padding: EdgeInsets.all(5),
+                            padding: const EdgeInsets.all(5),
                             height: 70,
                             width: 70,
+                            decoration: BoxDecoration(
+                                color: const Color(0xFFC8A8E9),
+                                borderRadius: BorderRadius.circular(360)),
                             child: IconButton(
                                 onPressed: () {},
-                                icon: Icon(Icons.monitor_heart_outlined)),
-                            decoration: BoxDecoration(
-                                color: Color(0xFFC8A8E9),
-                                borderRadius: BorderRadius.circular(360)),
+                                icon: const Icon(Icons.monitor_heart_outlined)),
                           ),
-                          Text(
+                          const Text(
                             'Anestesiología',
                             style: TextStyle(
                               fontFamily: 'Poppins',
@@ -375,24 +378,24 @@ class _Home__PageState extends State<Home__Page> {
                           )
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 30,
                       ),
                       Column(
                         children: [
                           //bolita
                           Container(
-                            padding: EdgeInsets.all(5),
+                            padding: const EdgeInsets.all(5),
                             height: 70,
                             width: 70,
+                            decoration: BoxDecoration(
+                                color: const Color(0xFFC8A8E9),
+                                borderRadius: BorderRadius.circular(360)),
                             child: IconButton(
                                 onPressed: () {},
-                                icon: Icon(Icons.monitor_heart_outlined)),
-                            decoration: BoxDecoration(
-                                color: Color(0xFFC8A8E9),
-                                borderRadius: BorderRadius.circular(360)),
+                                icon: const Icon(Icons.monitor_heart_outlined)),
                           ),
-                          Text(
+                          const Text(
                             'Optalmologia',
                             style: TextStyle(
                               fontFamily: 'Poppins',
@@ -413,47 +416,51 @@ class _Home__PageState extends State<Home__Page> {
                         'Nuestros \nEspecialistas',
                         style: TextStyle(
                             fontFamily: 'Poppins',
-                            fontSize: 18,
+                            fontSize: responsive.responsiveFontSize(15),
                             fontWeight: FontWeight.w600),
                       ),
                       Container(
-                        width: 80,
-                        height: 30,
+                        width:responsive.responsiveWidth(80),
+                        height: responsive.responsiveHeight(30),
+                        decoration: BoxDecoration(
+                            color: const Color(0xFFE3AADD),
+                            borderRadius: BorderRadius.circular(25)),
                         child: Center(
                             child: Text(
                           'Ver Todo',
                           style: TextStyle(
                               fontFamily: 'Poppins',
-                              fontSize: 15,
+                              fontSize: responsive.responsiveFontSize(15),
                               fontWeight: FontWeight.w400),
                         )),
-                        decoration: BoxDecoration(
-                            color: Color(0xFFE3AADD),
-                            borderRadius: BorderRadius.circular(25)),
                       ),
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 25,
                 ),
-                Container(
-                  height: 250,
+                SizedBox(
+                  height: responsive.responsiveHeight(210),
                   child: Padding(
-                      padding: EdgeInsets.all(10),
+                      padding: const EdgeInsets.all(10),
                       child: ListView(
                         scrollDirection: Axis.horizontal,
                         children: [
                           Container(
-                            width: 100,
-                            height: 200,
+                            width: responsive.responsiveWidth(80),
+                            height:  responsive.responsiveHeight(100),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(360),
+                              color: const Color(0xFFF5BCBA),
+                            ),
                             child: Column(
                               children: [
                                 ClipRRect(
                                   borderRadius: BorderRadius.circular(360),
                                   child: Image.asset('assets/hermosa.jpg'),
                                 ),
-                                Text(
+                                const Text(
                                   'Doctora Xxx ',
                                   style: TextStyle(
                                     fontFamily: 'Poppins',
@@ -461,96 +468,109 @@ class _Home__PageState extends State<Home__Page> {
                                 ),
                               ],
                             ),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(360),
-                              color: Color(0xFFF5BCBA),
-                            ),
                           ),
                           SizedBox(
-                            width: 50,
+                            width: responsive.responsiveWidth(25),
                           ),
                           Container(
-                            width: 100,
-                            height: 200,
+                            width: responsive.responsiveWidth(80),
+                            height:  responsive.responsiveHeight(100),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(360),
+                              color: const Color(0xFFF5BCBA),
+                            ),
                             child: Column(
                               children: [
                                 ClipRRect(
                                   borderRadius: BorderRadius.circular(360),
                                   child: Image.asset('assets/hermosa.jpg'),
                                 ),
-                                Text('Doctora Xxx ',
-                                    style: TextStyle(
-                                      fontFamily: 'Poppins',
-                                    )),
+                                const Text(
+                                  'Doctora Xxx ',
+                                  style: TextStyle(
+                                    fontFamily: 'Poppins',
+                                  ),
+                                ),
                               ],
-                            ),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(360),
-                              color: Color(0xFFF5BCBA),
                             ),
                           ),
                           SizedBox(
-                            width: 50,
+                            width: responsive.responsiveWidth(25),
                           ),
                           Container(
-                            width: 100,
-                            height: 200,
+                            width: responsive.responsiveWidth(80),
+                            height:  responsive.responsiveHeight(100),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(360),
+                              color: const Color(0xFFF5BCBA),
+                            ),
                             child: Column(
                               children: [
                                 ClipRRect(
                                   borderRadius: BorderRadius.circular(360),
-                                  /* child: Image.asset('assets/hermosa.jpg'),*/
+                                  child: Image.asset('assets/hermosa.jpg'),
                                 ),
-                                /*  Text('Doctora Xxx '),*/
+                                const Text(
+                                  'Doctora Xxx ',
+                                  style: TextStyle(
+                                    fontFamily: 'Poppins',
+                                  ),
+                                ),
                               ],
-                            ),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(360),
-                              color: Color(0xFFF5BCBA),
                             ),
                           ),
                           SizedBox(
-                            width: 50,
+                            width: responsive.responsiveWidth(25),
                           ),
                           Container(
-                            width: 100,
-                            height: 200,
+                            width: responsive.responsiveWidth(80),
+                            height:  responsive.responsiveHeight(100),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(360),
+                              color: const Color(0xFFF5BCBA),
+                            ),
                             child: Column(
                               children: [
                                 ClipRRect(
                                   borderRadius: BorderRadius.circular(360),
-                                  /* child: Image.asset('assets/hermosa.jpg'),*/
+                                  child: Image.asset('assets/hermosa.jpg'),
                                 ),
-                                /*  Text('Doctora Xxx '),*/
+                                const Text(
+                                  'Doctora Xxx ',
+                                  style: TextStyle(
+                                    fontFamily: 'Poppins',
+                                  ),
+                                ),
                               ],
-                            ),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(360),
-                              color: Color(0xFFF5BCBA),
                             ),
                           ),
                           SizedBox(
-                            width: 50,
+                            width: responsive.responsiveWidth(25),
                           ),
                           Container(
-                            width: 100,
-                            height: 200,
+                            width: responsive.responsiveWidth(80),
+                            height:  responsive.responsiveHeight(100),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(360),
+                              color: const Color(0xFFF5BCBA),
+                            ),
                             child: Column(
                               children: [
                                 ClipRRect(
                                   borderRadius: BorderRadius.circular(360),
-                                  /* child: Image.asset('assets/hermosa.jpg'),*/
+                                  child: Image.asset('assets/hermosa.jpg'),
                                 ),
-                                /*  Text('Doctora Xxx '),*/
+                                const Text(
+                                  'Doctora Xxx ',
+                                  style: TextStyle(
+                                    fontFamily: 'Poppins',
+                                  ),
+                                ),
                               ],
-                            ),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(360),
-                              color: Color(0xFFF5BCBA),
                             ),
                           ),
                           SizedBox(
-                            width: 50,
+                            width: responsive.responsiveWidth(25),
                           ),
                         ],
                       )),

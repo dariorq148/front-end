@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:untitled3/Cita_Confirmada.dart';
 import 'package:untitled3/Responsive/Responsive__Size.dart';
 
 class EditarPerfil extends StatefulWidget {
@@ -17,7 +16,7 @@ class _EditarPerfilState extends State<EditarPerfil> {
     final Responsive responsive = Responsive(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Datos Personales',
           style: TextStyle(fontFamily: 'Poppins'),
         ),
@@ -26,17 +25,25 @@ class _EditarPerfilState extends State<EditarPerfil> {
           bottom: true,
           top: true,
           child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 25),
+            padding: const EdgeInsets.symmetric(horizontal: 25),
             child: ListView(
               children: [
                 ///datos del paciente
                 Container(
-                  padding: EdgeInsets.only(left: 10, right: 10,top: 10, bottom: 10),
+                  padding: const EdgeInsets.only(left: 10, right: 10,top: 10, bottom: 10),
+                  decoration: BoxDecoration(
+                      color: const Color(0xFFE3AADD),
+                      borderRadius: BorderRadius.circular(5)),
                   child: Column(
 
                     children: [
                       //foto container
                       Container(
+                        //foto
+                        padding: EdgeInsets.all(responsive.responsiveWidth(2)),
+                        decoration: const BoxDecoration(
+                            /*     border: Border.all(color: Colors.black12),*/
+                            ),
                         //foto
                         child: Padding(
                           padding:
@@ -49,12 +56,8 @@ class _EditarPerfilState extends State<EditarPerfil> {
                                 color: Colors.black),
                           ),
                         ),
-                        padding: EdgeInsets.all(responsive.responsiveWidth(2)),
-                        decoration: BoxDecoration(
-                            /*     border: Border.all(color: Colors.black12),*/
-                            ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 25,
                       ),
 
@@ -62,7 +65,7 @@ class _EditarPerfilState extends State<EditarPerfil> {
 
                       TextField(
                         decoration: InputDecoration(
-                            label: Text(
+                            label: const Text(
                               'Nombres',
                               style: TextStyle(fontFamily: 'Poppins'),
                             ),
@@ -70,12 +73,12 @@ class _EditarPerfilState extends State<EditarPerfil> {
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(5))),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 25,
                       ),
                       TextField(
                         decoration: InputDecoration(
-                            label: Text(
+                            label: const Text(
                               'Apellidos',
                               style: TextStyle(fontFamily: 'Poppins'),
                             ),
@@ -84,7 +87,7 @@ class _EditarPerfilState extends State<EditarPerfil> {
                                 borderRadius: BorderRadius.circular(5))),
                       ),
 
-                      SizedBox(
+                      const SizedBox(
                         height: 25,
                       ),
 
@@ -92,7 +95,7 @@ class _EditarPerfilState extends State<EditarPerfil> {
                       Container(
                         child: Column(
                           children: [
-                            Text(
+                            const Text(
                               'Sexo',
                               style: TextStyle(fontFamily: 'Poppins'),
                             ),
@@ -101,7 +104,7 @@ class _EditarPerfilState extends State<EditarPerfil> {
                               children: [
                                 Column(
                                   children: [
-                                    Text(
+                                    const Text(
                                       'Masculino',
                                       style: TextStyle(fontFamily: 'Poppins'),
                                     ),
@@ -117,7 +120,7 @@ class _EditarPerfilState extends State<EditarPerfil> {
                                 ),
                                 Column(
                                   children: [
-                                    Text('Femenino',
+                                    const Text('Femenino',
                                         style:
                                             TextStyle(fontFamily: 'Poppins')),
                                     Checkbox(
@@ -135,12 +138,12 @@ class _EditarPerfilState extends State<EditarPerfil> {
                           ],
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 25,
                       ),
                       TextField(
                         decoration: InputDecoration(
-                            label: Text(
+                            label: const Text(
                               'Numero de Celular',
                               style: TextStyle(fontFamily: 'Poppins'),
                             ),
@@ -148,12 +151,12 @@ class _EditarPerfilState extends State<EditarPerfil> {
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(5))),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 25,
                       ),
                       TextField(
                         decoration: InputDecoration(
-                            label: Text(
+                            label: const Text(
                               'Correo Electronico',
                               style: TextStyle(fontFamily: 'Poppins'),
                             ),
@@ -161,13 +164,13 @@ class _EditarPerfilState extends State<EditarPerfil> {
                             border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(5))),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 25,
                       ),
 
                       TextField(
                         decoration: InputDecoration(
-                            label: Text(
+                            label: const Text(
                               'Direccion Fisica',
                               style: TextStyle(fontFamily: 'Poppins'),
                             ),
@@ -177,31 +180,28 @@ class _EditarPerfilState extends State<EditarPerfil> {
                       ),
                     ],
                   ),
-                  decoration: BoxDecoration(
-                      color: Color(0xFFE3AADD),
-                      borderRadius: BorderRadius.circular(5)),
                 ),
                 //actualizar perfil
                 Container(
                   width: double.maxFinite,
                   height: 50,
+                  decoration:
+                      BoxDecoration(borderRadius: BorderRadius.circular(15)),
                   child: ElevatedButton(
                     onPressed: () {
 
                     },
-                    child: Text(
+                    style: ButtonStyle(
+                        shape: WidgetStatePropertyAll(RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(5)))),
+                    child: const Text(
                       'Guardar Cambios',
                       style: TextStyle(
                           fontFamily: 'Poppins',
                           fontSize: 25,
                           letterSpacing: 2),
                     ),
-                    style: ButtonStyle(
-                        shape: WidgetStatePropertyAll(RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(5)))),
                   ),
-                  decoration:
-                      BoxDecoration(borderRadius: BorderRadius.circular(15)),
                 ),
               ],
             ),

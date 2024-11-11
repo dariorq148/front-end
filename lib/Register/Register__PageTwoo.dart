@@ -2,8 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:untitled3/Home/Home__Page.dart';
-import 'package:untitled3/Models/model__User.dart';
-import 'package:untitled3/Register/Core/Register__endpoint.dart';
+import 'package:untitled3/Responsive/Responsive__Size.dart';
 import 'package:untitled3/Widgets/Buttons/My__Buttons_movil.dart';
 import 'package:untitled3/Widgets/Statics/Static__Colors.dart';
 import 'package:untitled3/Widgets/TextFields__Widget.dart';
@@ -37,12 +36,13 @@ class _Register__PageTState extends State<Register__PageT> {
 
   @override
   Widget build(BuildContext context) {
+    final Responsive responsive = Responsive(context);
     return SafeArea(
         child: Scaffold(
             body: Center(
       child: SingleChildScrollView(
         child: Padding(
-            padding: const EdgeInsets.only(top: 200),
+            padding: const EdgeInsets.only(top: 100),
             child: Stack(
               children: [
                 /*fondo*/
@@ -60,27 +60,29 @@ class _Register__PageTState extends State<Register__PageT> {
                 ///aqui
 
                 Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  width: 380,
+                  padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  width: responsive.responsiveWidth(380),
                   child: Column(
                     children: [
                       /*Titulo*/
                       Container(
                         child: Text(
                           'Ya casi terminas',
-                          style: TextStyle(color: Colores.color5, fontSize: 25),
+                          style: TextStyle(
+                              color: Colores.color5,
+                              fontSize: responsive.responsiveFontSize(18)),
                         ),
                       ),
                       /*formulario*/
                       Container(
                         padding:
-                            EdgeInsets.symmetric(vertical: 25, horizontal: 5),
-                        width: 350,
+                            const EdgeInsets.symmetric(vertical: 25, horizontal: 5),
+                        width: responsive.responsiveWidth(350),
                         child: Column(
                           children: [
                             Row(
                               children: [
-                                Icon(Icons.phone),
+                                const Icon(Icons.phone),
                                 1.kW,
                                 Expanded(
                                   child: My__Textfields(
@@ -93,7 +95,7 @@ class _Register__PageTState extends State<Register__PageT> {
                             15.kH,
                             Row(
                               children: [
-                                Icon(Icons.email),
+                                const Icon(Icons.email),
                                 1.kW,
                                 Expanded(
                                   child: My__Textfields(
@@ -107,12 +109,12 @@ class _Register__PageTState extends State<Register__PageT> {
                             15.kH,
                             Row(
                               children: [
-                                Icon(Icons.password),
+                                const Icon(Icons.password),
                                 1.kW,
                                 Expanded(
                                   child: My__Textfields(
                                     controller: passwordcontroller,
-                                    hintText: 'Password',
+                                    hintText: 'Contraseña',
                                     obscureText: false,
                                   ),
                                 ),
@@ -121,7 +123,7 @@ class _Register__PageTState extends State<Register__PageT> {
                             15.kH,
                             Row(
                               children: [
-                                Icon(Icons.password),
+                                const Icon(Icons.password),
                                 1.kW,
                                 Expanded(
                                   child: My__Textfields(
@@ -139,7 +141,7 @@ class _Register__PageTState extends State<Register__PageT> {
                       ),
                       40.kH,
                       /*boton*/
-                      Container(
+                      SizedBox(
                         height: 40,
                         child: My__Buttons_Movil(
                           textbutton: 'Registrar',
@@ -147,7 +149,7 @@ class _Register__PageTState extends State<Register__PageT> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => Home__Page(),
+                                  builder: (context) => const Home__Page(),
                                 ));
                           },
                         ),
@@ -159,6 +161,6 @@ class _Register__PageTState extends State<Register__PageT> {
             )),
       ),
     )));
-    ;
+
   }
 }

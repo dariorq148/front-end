@@ -40,6 +40,11 @@ class _Profile__PageState extends State<Profile__Page> {
                   Flexible(
                     child: Container(
                       //foto
+                      padding: EdgeInsets.all(responsive.responsiveWidth(2)),
+                      decoration: const BoxDecoration(
+                          /*     border: Border.all(color: Colors.black12),*/
+                          ),
+                      //foto
                       child: Padding(
                         padding: EdgeInsets.all(responsive.responsiveWidth(8)),
                         child: Container(
@@ -50,10 +55,6 @@ class _Profile__PageState extends State<Profile__Page> {
                               color: Colors.black),
                         ),
                       ),
-                      padding: EdgeInsets.all(responsive.responsiveWidth(2)),
-                      decoration: BoxDecoration(
-                          /*     border: Border.all(color: Colors.black12),*/
-                          ),
                     ),
                   ),
                   //nombre usuario
@@ -61,6 +62,8 @@ class _Profile__PageState extends State<Profile__Page> {
                     child: Container(
                       width: responsive.responsiveWidth(200),
                       height: responsive.responsiveHeight(100),
+                      decoration: const BoxDecoration(
+                          /*  border: Border.all(color: Colors.black)*/),
                       child: Column(
                         children: [
                           Padding(
@@ -73,41 +76,39 @@ class _Profile__PageState extends State<Profile__Page> {
                                   fontSize: responsive.responsiveFontSize(20)),
                             ),
                           ),
-                          Text(
+                          const Text(
                             'io@gmail.com',
                             style: TextStyle(fontFamily: 'Poppins'),
                           )
                         ],
                       ),
-                      decoration: BoxDecoration(
-                          /*  border: Border.all(color: Colors.black)*/),
                     ),
                   ),
                   Flexible(
                     child: Container(
                         width: responsive.responsiveWidth(100),
                         height: responsive.responsiveHeight(100),
+                        decoration: const BoxDecoration(
+                            /*border: Border.all(color: Colors.black)*/),
                         child: Center(
                           child: IconButton(
                               onPressed: () {
                                 Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                      builder: (context) => EditarPerfil(),
+                                      builder: (context) => const EditarPerfil(),
                                     ));
                               },
-                              icon: Icon(Icons.edit)),
-                        ),
-                        decoration: BoxDecoration(
-                            /*border: Border.all(color: Colors.black)*/)),
+                              icon: const Icon(Icons.edit)),
+                        )),
                   )
                 ],
               ),
               SizedBox(
                 height: responsive.responsiveHeight(20),
               ),
-              Divider(),
-              SizedBox(
+              const Divider(),
+              const SizedBox(
                 height: 20,
               ),
               Padding(
@@ -121,20 +122,23 @@ class _Profile__PageState extends State<Profile__Page> {
                   textAlign: TextAlign.justify,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
 
               Padding(
-                padding: EdgeInsets.only(left: 25, right: 25),
+                padding: const EdgeInsets.only(left: 25, right: 25),
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 25, vertical: 25),
+                  padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 25),
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      border: Border.all(color: Colors.black26)),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       GestureDetector(
                         onTap: () {},
-                        child: ListTile(
+                        child: const ListTile(
                           leading: Icon(Icons.translate),
                           title: Text(
                             'Idioma',
@@ -146,7 +150,7 @@ class _Profile__PageState extends State<Profile__Page> {
                       ),
                       GestureDetector(
                         onTap: () {},
-                        child: ListTile(
+                        child: const ListTile(
                           leading: Icon(Icons.work_history),
                           title: Text(
                             'Historial de Citas',
@@ -158,7 +162,7 @@ class _Profile__PageState extends State<Profile__Page> {
                       ),
                       GestureDetector(
                         onTap: () {},
-                        child: ListTile(
+                        child: const ListTile(
                           leading: Icon(Icons.handshake),
                           title: Text(
                             'Otros',
@@ -172,7 +176,7 @@ class _Profile__PageState extends State<Profile__Page> {
                           onTap: () {
                             print('help center');
                           },
-                          child: ListTile(
+                          child: const ListTile(
                             leading: Icon(Icons.add_call),
                             title: Text(
                               style: TextStyle(fontFamily: 'Poppins'),
@@ -183,21 +187,26 @@ class _Profile__PageState extends State<Profile__Page> {
                           ))
                     ],
                   ),
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(5),
-                      border: Border.all(color: Colors.black26)),
                 ),
               ),
 
               Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 25, vertical: 150),
-                child: Container(
+                child: SizedBox(
                   width: double.maxFinite,
                   height: responsive.responsiveHeight(50),
                   child: TextButton(
                     onPressed: () {},
-                    child: Text(
+                    style: ButtonStyle(
+                        shape: WidgetStatePropertyAll(RoundedRectangleBorder(
+                      side: const BorderSide(
+                        color: Colors.black,
+                        width: 1,
+                      ),
+                      borderRadius: BorderRadius.circular(8),
+                    ))),
+                    child: const Text(
                       'Cerrar Sesion',
                       style: TextStyle(
                           fontFamily: 'Poppins',
@@ -205,14 +214,6 @@ class _Profile__PageState extends State<Profile__Page> {
                           fontWeight: FontWeight.bold,
                           fontSize: 18),
                     ),
-                    style: ButtonStyle(
-                        shape: MaterialStatePropertyAll(RoundedRectangleBorder(
-                      side: BorderSide(
-                        color: Colors.black,
-                        width: 1,
-                      ),
-                      borderRadius: BorderRadius.circular(8),
-                    ))),
                   ),
                 ),
               ),

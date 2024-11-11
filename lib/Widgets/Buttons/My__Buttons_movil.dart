@@ -29,11 +29,12 @@ class My__Buttons_Movil extends StatelessWidget {
           borderRadius: BorderRadius.circular(5),
         ),
         child: Container(
-          padding: EdgeInsets.all(1),
+          padding: const EdgeInsets.all(1),
           alignment: Alignment.center,
           child: Text(
             textbutton,
             style: MyText__Bold(),
+
           ),
         ),
       ),

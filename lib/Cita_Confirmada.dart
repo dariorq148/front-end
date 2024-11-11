@@ -8,11 +8,13 @@ class DetalleCitaPage extends StatelessWidget {
   final String ubicacion = 'Clínica Central, Consultorio 203';
   final String paciente = 'Ana Gómez';
 
+  const DetalleCitaPage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Detalle de Cita Médica',style: TextStyle(fontFamily: 'Poppins'),),
+        title: const Text('Detalle de Cita Médica',style: TextStyle(fontFamily: 'Poppins'),),
         centerTitle: true,
       ),
       body: Padding(
@@ -22,69 +24,69 @@ class DetalleCitaPage extends StatelessWidget {
           children: [
             Text(
               'Especialidad: $especialidad',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold,fontFamily: 'Poppins'),
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold,fontFamily: 'Poppins'),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Text(
               'Doctor: $doctor',
-              style: TextStyle(fontSize: 16,fontFamily: 'Poppins'),
+              style: const TextStyle(fontSize: 16,fontFamily: 'Poppins'),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Text(
               'Fecha: $fecha',
-              style: TextStyle(fontSize: 16,fontFamily: 'Poppins'),
+              style: const TextStyle(fontSize: 16,fontFamily: 'Poppins'),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Text(
               'Hora: $hora',
-              style: TextStyle(fontSize: 16,fontFamily: 'Poppins'),
+              style: const TextStyle(fontSize: 16,fontFamily: 'Poppins'),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Text(
               'Ubicación: $ubicacion',
-              style: TextStyle(fontSize: 16,fontFamily: 'Poppins'),
+              style: const TextStyle(fontSize: 16,fontFamily: 'Poppins'),
             ),
-            SizedBox(height: 20),
-            Divider(),
-            Text(
+            const SizedBox(height: 20),
+            const Divider(),
+            const Text(
               'Detalles del Paciente',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold,fontFamily: 'Poppins'),
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             Text(
               'Nombre del Paciente: $paciente',
-              style: TextStyle(fontSize: 16,fontFamily: 'Poppins'),
+              style: const TextStyle(fontSize: 16,fontFamily: 'Poppins'),
             ),
-            SizedBox(height: 10),
-            Text(
+            const SizedBox(height: 10),
+            const Text(
               'Número de Contacto: 123-456-7890',
               style: TextStyle(fontSize: 16,fontFamily: 'Poppins'),
             ),
-            SizedBox(height: 10),
-            Text(
+            const SizedBox(height: 10),
+            const Text(
               'Correo Electrónico: io@gmail.com',
               style: TextStyle(fontSize: 16,fontFamily: 'Poppins'),
             ),
-            SizedBox(height: 20),
-            Divider(),
-            Text(
+            const SizedBox(height: 20),
+            const Divider(),
+            const Text(
               'Instrucciones Especiales:',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
-            SizedBox(height: 10),
-            Text(
+            const SizedBox(height: 10),
+            const Text(
               '• Llegar con 15 minutos de antelación.\n'
                   '• Presentar identificación oficial.\n'
                   '• Traer resultados de exámenes previos.',
               style: TextStyle(fontSize: 16,fontFamily: 'Poppins'),
             ),
-            Spacer(),
+            const Spacer(),
             Center(
               child: ElevatedButton(
                 onPressed: () {
                   // Acción para confirmar la cita
                 },
-                child: Text('Confirmar Cita',style: TextStyle(fontFamily: 'Poppins'),),
+                child: const Text('Confirmar Cita',style: TextStyle(fontFamily: 'Poppins'),),
               ),
             ),
           ],

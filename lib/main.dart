@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:untitled3/Introduction/Introduction__Page.dart';
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -9,7 +9,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Introduction__Page(),
     );

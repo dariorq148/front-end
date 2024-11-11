@@ -13,7 +13,7 @@ class _CalendarioCitasState extends State<CalendarioCitas> {
   CalendarFormat _calendarFormat = CalendarFormat.month;
   DateTime _selectedDay = DateTime.now();
   DateTime _focusedDay = DateTime.now();
-  Map<DateTime, List<String>> _events = {};
+  final Map<DateTime, List<String>> _events = {};
 
   List<String> _getEventsForDay(DateTime day) {
     //evento aqui
@@ -24,7 +24,7 @@ class _CalendarioCitasState extends State<CalendarioCitas> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Citas',style: TextStyle(fontFamily: 'Poppins'),),
+        title: const Text('Citas',style: TextStyle(fontFamily: 'Poppins'),),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -60,7 +60,7 @@ class _CalendarioCitasState extends State<CalendarioCitas> {
                     _focusedDay = focusedDay;
                   },
                   eventLoader: _getEventsForDay,
-                  calendarStyle: CalendarStyle(
+                  calendarStyle: const CalendarStyle(
 
                     todayTextStyle: TextStyle(fontFamily: 'Poppins'),
 
@@ -74,17 +74,17 @@ class _CalendarioCitasState extends State<CalendarioCitas> {
                   title: Text(event),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
-              Text(
+              const Text(
                 'Horarios Disponibles',
                 style: TextStyle(
                   fontFamily: 'Poppins',
                   fontSize: 18,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               // Turno (Mañana)
@@ -92,24 +92,35 @@ class _CalendarioCitasState extends State<CalendarioCitas> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Turno Mañana',
+                    const Text('Turno Mañana',
                         style: TextStyle(
                           fontFamily: 'Poppins',
                           fontSize: 15,
                         )),
-                    SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
                     Container(
                       padding:
-                          EdgeInsets.symmetric(vertical: 15, horizontal: 5),
+                          const EdgeInsets.symmetric(vertical: 15, horizontal: 5),
+
+                      /*      height: 200,*/
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        color: const Color(0xFFF4E7FB),
+                      ),
                       child: Column(
                         children: [
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               Container(
-                                child: Center(
+                                height: 50,
+                                width: 100,
+                                decoration: BoxDecoration(
+                                    color: const Color(0xFFC8A8E9),
+                                    borderRadius: BorderRadius.circular(5)),
+                                child: const Center(
                                   child: Text(
                                     '08:00 AM',
                                     textAlign: TextAlign.center,
@@ -121,14 +132,14 @@ class _CalendarioCitasState extends State<CalendarioCitas> {
                                         letterSpacing: 2),
                                   ),
                                 ),
+                              ),
+                              Container(
                                 height: 50,
                                 width: 100,
                                 decoration: BoxDecoration(
-                                    color: Color(0xFFC8A8E9),
+                                    color: const Color(0xFFE3AADD),
                                     borderRadius: BorderRadius.circular(5)),
-                              ),
-                              Container(
-                                child: Center(
+                                child: const Center(
                                   child: Text(
                                     '08:30 AM',
                                     textAlign: TextAlign.center,
@@ -139,14 +150,14 @@ class _CalendarioCitasState extends State<CalendarioCitas> {
                                         letterSpacing: 2),
                                   ),
                                 ),
+                              ),
+                              Container(
                                 height: 50,
                                 width: 100,
                                 decoration: BoxDecoration(
-                                    color: Color(0xFFE3AADD),
+                                    color: const Color(0xFFC8A8E9),
                                     borderRadius: BorderRadius.circular(5)),
-                              ),
-                              Container(
-                                child: Center(
+                                child: const Center(
                                   child: Text(
                                     '09:00 AM',
                                     textAlign: TextAlign.center,
@@ -158,14 +169,14 @@ class _CalendarioCitasState extends State<CalendarioCitas> {
                                         letterSpacing: 2),
                                   ),
                                 ),
+                              ),
+                              Container(
                                 height: 50,
                                 width: 100,
                                 decoration: BoxDecoration(
-                                    color: Color(0xFFC8A8E9),
+                                    color: const Color(0xFFC8A8E9),
                                     borderRadius: BorderRadius.circular(5)),
-                              ),
-                              Container(
-                                child: Center(
+                                child: const Center(
                                   child: Text(
                                     '09:30 AM',
                                     textAlign: TextAlign.center,
@@ -176,25 +187,25 @@ class _CalendarioCitasState extends State<CalendarioCitas> {
                                         letterSpacing: 2),
                                   ),
                                 ),
-                                height: 50,
-                                width: 100,
-                                decoration: BoxDecoration(
-                                    color: Color(0xFFC8A8E9),
-                                    borderRadius: BorderRadius.circular(5)),
                               ),
                             ],
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              SizedBox(
+                              const SizedBox(
                                 width: 10,
                               ),
                               Container(
-                                child: Center(
+                                height: 50,
+                                width: 100,
+                                decoration: BoxDecoration(
+                                    color: const Color(0xFFE3AADD),
+                                    borderRadius: BorderRadius.circular(5)),
+                                child: const Center(
                                   child: Text(
                                     '10:00 AM',
                                     textAlign: TextAlign.center,
@@ -205,17 +216,17 @@ class _CalendarioCitasState extends State<CalendarioCitas> {
                                         letterSpacing: 2),
                                   ),
                                 ),
-                                height: 50,
-                                width: 100,
-                                decoration: BoxDecoration(
-                                    color: Color(0xFFE3AADD),
-                                    borderRadius: BorderRadius.circular(5)),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 11,
                               ),
                               Container(
-                                child: Center(
+                                height: 50,
+                                width: 100,
+                                decoration: BoxDecoration(
+                                    color: const Color(0xFFC8A8E9),
+                                    borderRadius: BorderRadius.circular(5)),
+                                child: const Center(
                                   child: Text(
                                     '10:30 AM',
                                     textAlign: TextAlign.center,
@@ -226,27 +237,16 @@ class _CalendarioCitasState extends State<CalendarioCitas> {
                                         letterSpacing: 2),
                                   ),
                                 ),
-                                height: 50,
-                                width: 100,
-                                decoration: BoxDecoration(
-                                    color: Color(0xFFC8A8E9),
-                                    borderRadius: BorderRadius.circular(5)),
                               ),
                             ],
                           ),
                         ],
                       ),
-
-                      /*      height: 200,*/
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
-                        color: Color(0xFFF4E7FB),
-                      ),
                     ),
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               // Turno (Tarde)
@@ -254,23 +254,34 @@ class _CalendarioCitasState extends State<CalendarioCitas> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Turno Tarde',  style: TextStyle(
+                    const Text('Turno Tarde',  style: TextStyle(
                       fontFamily: 'Poppins',
                       fontSize: 15,
                     )),
-                    SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
                     Container(
                       padding:
-                          EdgeInsets.symmetric(vertical: 15, horizontal: 5),
+                          const EdgeInsets.symmetric(vertical: 15, horizontal: 5),
+
+                      /*      height: 200,*/
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        color: const Color(0xFFF4E7FB),
+                      ),
                       child: Column(
                         children: [
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               Container(
-                                child: Center(
+                                height: 50,
+                                width: 100,
+                                decoration: BoxDecoration(
+                                    color: const Color(0xFFC8A8E9),
+                                    borderRadius: BorderRadius.circular(5)),
+                                child: const Center(
                                   child: Text(
                                     '01:00 PM',
                                     textAlign: TextAlign.center,
@@ -282,14 +293,14 @@ class _CalendarioCitasState extends State<CalendarioCitas> {
                                         letterSpacing: 2),
                                   ),
                                 ),
+                              ),
+                              Container(
                                 height: 50,
                                 width: 100,
                                 decoration: BoxDecoration(
-                                    color: Color(0xFFC8A8E9),
+                                    color: const Color(0xFFE3AADD),
                                     borderRadius: BorderRadius.circular(5)),
-                              ),
-                              Container(
-                                child: Center(
+                                child: const Center(
                                   child: Text(
                                     '01:30 PM',
                                     textAlign: TextAlign.center,
@@ -301,14 +312,14 @@ class _CalendarioCitasState extends State<CalendarioCitas> {
                                         letterSpacing: 2),
                                   ),
                                 ),
+                              ),
+                              Container(
                                 height: 50,
                                 width: 100,
                                 decoration: BoxDecoration(
-                                    color: Color(0xFFE3AADD),
+                                    color: const Color(0xFFC8A8E9),
                                     borderRadius: BorderRadius.circular(5)),
-                              ),
-                              Container(
-                                child: Center(
+                                child: const Center(
                                   child: Text(
                                     '02:00 PM',
                                     textAlign: TextAlign.center,
@@ -320,14 +331,14 @@ class _CalendarioCitasState extends State<CalendarioCitas> {
                                         letterSpacing: 2),
                                   ),
                                 ),
+                              ),
+                              Container(
                                 height: 50,
                                 width: 100,
                                 decoration: BoxDecoration(
-                                    color: Color(0xFFC8A8E9),
+                                    color: const Color(0xFFC8A8E9),
                                     borderRadius: BorderRadius.circular(5)),
-                              ),
-                              Container(
-                                child: Center(
+                                child: const Center(
                                   child: Text(
                                     '02:30 PM',
                                     textAlign: TextAlign.center,
@@ -339,25 +350,25 @@ class _CalendarioCitasState extends State<CalendarioCitas> {
                                         letterSpacing: 2),
                                   ),
                                 ),
-                                height: 50,
-                                width: 100,
-                                decoration: BoxDecoration(
-                                    color: Color(0xFFC8A8E9),
-                                    borderRadius: BorderRadius.circular(5)),
                               ),
                             ],
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
-                              SizedBox(
+                              const SizedBox(
                                 width: 7,
                               ),
                               Container(
-                                child: Center(
+                                height: 50,
+                                width: 100,
+                                decoration: BoxDecoration(
+                                    color: const Color(0xFFE3AADD),
+                                    borderRadius: BorderRadius.circular(5)),
+                                child: const Center(
                                   child: Text(
                                     '03:00 PM',
                                     textAlign: TextAlign.center,
@@ -369,17 +380,17 @@ class _CalendarioCitasState extends State<CalendarioCitas> {
                                         letterSpacing: 2),
                                   ),
                                 ),
-                                height: 50,
-                                width: 100,
-                                decoration: BoxDecoration(
-                                    color: Color(0xFFE3AADD),
-                                    borderRadius: BorderRadius.circular(5)),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 width: 8,
                               ),
                               Container(
-                                child: Center(
+                                height: 50,
+                                width: 100,
+                                decoration: BoxDecoration(
+                                    color: const Color(0xFFC8A8E9),
+                                    borderRadius: BorderRadius.circular(5)),
+                                child: const Center(
                                   child: Text(
                                     '03:30 PM',
                                     textAlign: TextAlign.center,
@@ -391,55 +402,44 @@ class _CalendarioCitasState extends State<CalendarioCitas> {
                                         letterSpacing: 2),
                                   ),
                                 ),
-                                height: 50,
-                                width: 100,
-                                decoration: BoxDecoration(
-                                    color: Color(0xFFC8A8E9),
-                                    borderRadius: BorderRadius.circular(5)),
                               ),
                             ],
                           ),
                         ],
                       ),
-
-                      /*      height: 200,*/
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
-                        color: Color(0xFFF4E7FB),
-                      ),
                     ),
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 50,
               ),
               Container(
                 width: double.maxFinite,
                 height: 50,
+                decoration: BoxDecoration(
+
+                    borderRadius: BorderRadius.circular(15)),
                 child: ElevatedButton(
                   onPressed: () {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => DetalleCitaPage(),
+                          builder: (context) => const DetalleCitaPage(),
                         ));
                   },
-                  child: Text(
+                  style: ButtonStyle(
+                      shape: WidgetStatePropertyAll(RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(5)))),
+                  child: const Text(
                     'Confirmar Cita',
                     style: TextStyle(
                           fontFamily: 'Poppins',
                         fontSize: 25, letterSpacing: 2),
                   ),
-                  style: ButtonStyle(
-                      shape: WidgetStatePropertyAll(RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5)))),
                 ),
-                decoration: BoxDecoration(
-
-                    borderRadius: BorderRadius.circular(15)),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 25,
               )
             ],

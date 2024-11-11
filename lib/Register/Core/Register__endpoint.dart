@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled3/Home/Home__Page.dart';
 import 'package:untitled3/Models/model__User.dart';
@@ -31,8 +30,8 @@ Future<void> register(User user, BuildContext context) async {
       var data = jsonDecode(response.body);
       if (data != null) {
         Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => Home__Page()));
-        print('Registro exitoso: ${data}');
+            context, MaterialPageRoute(builder: (context) => const Home__Page()));
+        print('Registro exitoso: $data');
       } else {
         print('Datos vacíos');
       }
@@ -41,6 +40,6 @@ Future<void> register(User user, BuildContext context) async {
       print('Cuerpo de la respuesta: ${response.body}');
     }
   } catch (e) {
-    print('Error: ${e}');
+    print('Error: $e');
   }
 }

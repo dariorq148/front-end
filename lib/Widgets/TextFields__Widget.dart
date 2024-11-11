@@ -16,11 +16,12 @@ class My__Textfields extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 25),
+      padding: const EdgeInsets.symmetric(horizontal: 25),
       child: TextField(
         controller: controller,
         obscureText: obscureText,
-        style: TextStyle(color: Colors.black),
+        style: const TextStyle(color: Colors.black,
+        fontFamily: 'Poppins'),
         decoration: InputDecoration(
           hintText: hintText,
           hintStyle: TextStyle(color: Colores.color4),

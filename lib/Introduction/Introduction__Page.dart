@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:untitled3/Login/Login__Page.dart';
+import 'package:untitled3/Responsive/Responsive__Size.dart';
 import 'package:untitled3/Widgets/Statics/Static__Colors.dart';
 
 class Introduction__Page extends StatelessWidget {
@@ -15,8 +16,13 @@ class Introduction__Page extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Responsive responsive = Responsive(context);
     return Scaffold(
       body: SafeArea(
+        right: true,
+        top: true,
+        left: true,
+        bottom: true,
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 25),
           child: Center(
@@ -24,23 +30,25 @@ class Introduction__Page extends StatelessWidget {
               autoScrollDuration: 3000,
               allowImplicitScrolling: true,
               globalFooter: SizedBox(
-                width: double.infinity,
+                width: responsive.screenWidth,
                 height: 50,
                 child: ElevatedButton(
                   onPressed: () => _onIntroEnd(context),
-                  child: const Text(
-                    'Iniciar',
-                    style: TextStyle(fontSize: 20),
-                  ),
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Colores.color4,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(5))),
+                  child: const Text(
+                    'Iniciar',
+                    style: TextStyle(fontSize: 20),
+                  ),
                 ),
               ),
               pages: [
                 PageViewModel(
                     title: 'Bienvenido a !!!',
+                    decoration: const PageDecoration(
+                        titleTextStyle: TextStyle(fontFamily: 'Poppins')),
                     image: Image.asset('assets/intro1.png'),
                     body: ''),
                 PageViewModel(
@@ -57,7 +65,11 @@ class Introduction__Page extends StatelessWidget {
                     body: '',
                     footer: Center(
                         child: Text(
-                            'Te acompañamos en tu proceso de seleccion \n de software a la medida de tu empresa'))),
+                      'Te acompañamos en tu proceso de seleccion \n de software a la medida de tu empresa',
+                      style: TextStyle(
+                          fontFamily: 'Poppins',
+                          fontSize: responsive.responsiveFontSize(11)),
+                    ))),
               ],
               onDone: () => _onIntroEnd(context),
               onSkip: () => _onIntroEnd(context),
@@ -65,12 +77,12 @@ class Introduction__Page extends StatelessWidget {
               back: const Icon(Icons.arrow_back_ios),
               skip: const Text(
                 'Siguiente',
-                style: TextStyle(fontWeight: FontWeight.w600,fontSize: 11),
+                style: TextStyle(fontWeight: FontWeight.w600, fontSize: 11),
               ),
               next: const Icon(Icons.arrow_forward_ios_rounded),
               done: const Text(
                 'Terminar',
-                style: TextStyle(fontWeight: FontWeight.w600,fontSize: 11),
+                style: TextStyle(fontWeight: FontWeight.w600, fontSize: 11),
               ),
               curve: Curves.fastLinearToSlowEaseIn,
               controlsMargin: const EdgeInsets.all(16),
