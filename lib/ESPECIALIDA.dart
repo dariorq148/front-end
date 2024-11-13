@@ -26,15 +26,13 @@ class _EspecialidadState extends State<Especialidad> {
           child: Column(
             children: [
               //foto especialidad
-              Container(
-                height: MediaQuery.of(context).size.height * 0.4,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(25),
-                    color: const Color(0xFFC8A8E9)),
+              Padding(padding: EdgeInsets.symmetric(horizontal: 2),
                 child: Image.asset(
                   'assets/Cardiologia.png',
                   fit: BoxFit.contain,
                 ),
+
+
               ),
               const SizedBox(
                 height: 20,

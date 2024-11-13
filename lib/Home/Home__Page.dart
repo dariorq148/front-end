@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:untitled3/ESPECIALIDA.dart';
 import 'package:untitled3/Profile/Profile__page.dart';
 import 'package:untitled3/Responsive/Responsive__Size.dart';
+import 'package:untitled3/doctor_perfil.dart';
 
 class Home__Page extends StatefulWidget {
   const Home__Page({super.key});
@@ -15,7 +16,7 @@ class Home__Page extends StatefulWidget {
 class _Home__PageState extends State<Home__Page> {
   @override
   Widget build(BuildContext context) {
-    final Responsive responsive=Responsive(context);
+    final Responsive responsive = Responsive(context);
     return Scaffold(
       appBar: AppBar(),
       body: SingleChildScrollView(
@@ -46,7 +47,7 @@ class _Home__PageState extends State<Home__Page> {
                         },
                         child: Container(
                           width: responsive.responsiveWidth(50),
-                          height:  responsive.responsiveHeight(50),
+                          height: responsive.responsiveHeight(50),
                           decoration: BoxDecoration(
                               color: Colors.black87,
                               borderRadius: BorderRadius.circular(360)),
@@ -57,7 +58,9 @@ class _Home__PageState extends State<Home__Page> {
                           child: Container(
                         child: Text(
                           'Hola io Ramos',
-                          style: TextStyle(fontFamily: 'Poppins',fontSize: responsive.responsiveFontSize(15)),
+                          style: TextStyle(
+                              fontFamily: 'Poppins',
+                              fontSize: responsive.responsiveFontSize(15)),
                         ),
                       )),
                       //notificaciones
@@ -65,7 +68,8 @@ class _Home__PageState extends State<Home__Page> {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(25)),
                         child: IconButton(
-                            onPressed: () {}, icon: const Icon(Icons.notifications)),
+                            onPressed: () {},
+                            icon: const Icon(Icons.notifications)),
                       )
                     ],
                   ),
@@ -92,17 +96,16 @@ class _Home__PageState extends State<Home__Page> {
                         ),
                         child: Stack(
                           children: [
-
                             Positioned.fill(
                               child: ImageFiltered(
-                                imageFilter: ImageFilter.blur(sigmaX: 1, sigmaY: 1),
+                                imageFilter:
+                                    ImageFilter.blur(sigmaX: 1, sigmaY: 1),
                                 child: Image.asset(
                                   'assets/tarjeta.png',
                                   fit: BoxFit.cover,
                                 ),
                               ),
                             ),
-
                             Center(
                               child: Text(
                                 '¡Cámbiate a Premium!',
@@ -124,7 +127,7 @@ class _Home__PageState extends State<Home__Page> {
                         decoration: BoxDecoration(
                             /* image: DecorationImage(image: AssetImage('assets/fb.png'),
                           ),*/
-                           /* color: Color(0xFFE3AADD),*/
+                            /* color: Color(0xFFE3AADD),*/
                             borderRadius: BorderRadius.circular(25)),
                         child: Padding(
                           padding: const EdgeInsets.all(2),
@@ -134,9 +137,7 @@ class _Home__PageState extends State<Home__Page> {
                               const Text(
                                 'Visita Nuestras \nRedes Sociales',
                                 style: TextStyle(
-                                  fontFamily: 'Poppins',
-                                    fontSize: 15
-                                ),
+                                    fontFamily: 'Poppins', fontSize: 15),
                               ),
                               Column(
                                 children: [
@@ -203,7 +204,8 @@ class _Home__PageState extends State<Home__Page> {
                               child: Text(
                             'Ver Todo',
                             style: TextStyle(
-                              fontFamily: 'Poppins',fontSize: responsive.responsiveFontSize(15),
+                              fontFamily: 'Poppins',
+                              fontSize: responsive.responsiveFontSize(15),
                             ),
                           )),
                         ),
@@ -240,7 +242,8 @@ class _Home__PageState extends State<Home__Page> {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) => const Especialidad(),
+                                        builder: (context) =>
+                                            const Especialidad(),
                                       ));
                                 },
                                 icon: const Icon(Icons.monitor_heart_outlined)),
@@ -420,7 +423,7 @@ class _Home__PageState extends State<Home__Page> {
                             fontWeight: FontWeight.w600),
                       ),
                       Container(
-                        width:responsive.responsiveWidth(80),
+                        width: responsive.responsiveWidth(80),
                         height: responsive.responsiveHeight(30),
                         decoration: BoxDecoration(
                             color: const Color(0xFFE3AADD),
@@ -447,9 +450,43 @@ class _Home__PageState extends State<Home__Page> {
                       child: ListView(
                         scrollDirection: Axis.horizontal,
                         children: [
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => Perfil__Doctor(),
+                                  ));
+                            },
+                            child: Container(
+                              width: responsive.responsiveWidth(80),
+                              height: responsive.responsiveHeight(100),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(360),
+                                color: const Color(0xFFF5BCBA),
+                              ),
+                              child: Column(
+                                children: [
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.circular(360),
+                                    child: Image.asset('assets/hermosa.jpg'),
+                                  ),
+                                  const Text(
+                                    'Doctora Andrea M. ',
+                                    style: TextStyle(
+                                      fontFamily: 'Poppins',
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                          SizedBox(
+                            width: responsive.responsiveWidth(25),
+                          ),
                           Container(
                             width: responsive.responsiveWidth(80),
-                            height:  responsive.responsiveHeight(100),
+                            height: responsive.responsiveHeight(100),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(360),
                               color: const Color(0xFFF5BCBA),
@@ -474,7 +511,7 @@ class _Home__PageState extends State<Home__Page> {
                           ),
                           Container(
                             width: responsive.responsiveWidth(80),
-                            height:  responsive.responsiveHeight(100),
+                            height: responsive.responsiveHeight(100),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(360),
                               color: const Color(0xFFF5BCBA),
@@ -499,7 +536,7 @@ class _Home__PageState extends State<Home__Page> {
                           ),
                           Container(
                             width: responsive.responsiveWidth(80),
-                            height:  responsive.responsiveHeight(100),
+                            height: responsive.responsiveHeight(100),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(360),
                               color: const Color(0xFFF5BCBA),
@@ -524,32 +561,7 @@ class _Home__PageState extends State<Home__Page> {
                           ),
                           Container(
                             width: responsive.responsiveWidth(80),
-                            height:  responsive.responsiveHeight(100),
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(360),
-                              color: const Color(0xFFF5BCBA),
-                            ),
-                            child: Column(
-                              children: [
-                                ClipRRect(
-                                  borderRadius: BorderRadius.circular(360),
-                                  child: Image.asset('assets/hermosa.jpg'),
-                                ),
-                                const Text(
-                                  'Doctora Xxx ',
-                                  style: TextStyle(
-                                    fontFamily: 'Poppins',
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          SizedBox(
-                            width: responsive.responsiveWidth(25),
-                          ),
-                          Container(
-                            width: responsive.responsiveWidth(80),
-                            height:  responsive.responsiveHeight(100),
+                            height: responsive.responsiveHeight(100),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(360),
                               color: const Color(0xFFF5BCBA),
