@@ -26,13 +26,12 @@ class _EspecialidadState extends State<Especialidad> {
           child: Column(
             children: [
               //foto especialidad
-              Padding(padding: EdgeInsets.symmetric(horizontal: 2),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 2),
                 child: Image.asset(
                   'assets/Cardiologia.png',
                   fit: BoxFit.contain,
                 ),
-
-
               ),
               const SizedBox(
                 height: 20,
@@ -55,19 +54,24 @@ class _EspecialidadState extends State<Especialidad> {
                       ],
                     ),
                     const SizedBox(
-                      height: 20,
+                      height: 15,
                     ),
+
                     ///descripcion del servicio
                     Container(
                       padding: const EdgeInsets.all(25),
                       height: MediaQuery.of(context).size.height * 0.2,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(8),
-                        color: const Color(0xFFC8A8E9),
+                        gradient: const LinearGradient(colors: [
+                          Color(0xFFC8A8E9),
+                          Color(0xFFE3AADD),
+                          Color(0xFFE3AADD)
+                        ]),
                       ),
                       child: const Text(
-                          'Nuestro servicio de Cardiología ofrece una atención integral para el diagnóstico y tratamiento de enfermedades del corazón y el sistema circulatorio. Contamos con especialistas altamente calificados y la última tecnología en equipos de monitoreo y diagnóstico, para brindarte el cuidado preciso y personalizado que necesitas.',
-                      style: TextStyle(fontFamily: 'Poppins'),
+                        'Nuestro servicio de Cardiología ofrece una atención integral para el diagnóstico y tratamiento de enfermedades del corazón y el sistema circulatorio. Contamos con especialistas altamente calificados y la última tecnología en equipos de monitoreo y diagnóstico, para brindarte el cuidado preciso y personalizado que necesitas.',
+                        style: TextStyle(fontFamily: 'Poppins'),
                       ),
                     ),
                   ],
@@ -80,7 +84,7 @@ class _EspecialidadState extends State<Especialidad> {
                     Text(
                       'Especialistas en Cardiologia',
                       style: TextStyle(
-                            fontFamily: 'Poppins',
+                          fontFamily: 'Poppins',
                           fontSize: 18,
                           fontWeight: FontWeight.w300),
                     )

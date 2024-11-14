@@ -455,7 +455,7 @@ class _Home__PageState extends State<Home__Page> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => Perfil__Doctor(),
+                                    builder: (context) => const Perfil__Doctor(),
                                   ));
                             },
                             child: Container(
