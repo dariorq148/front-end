@@ -178,7 +178,7 @@ class _Perfil__DoctorState extends State<Perfil__Doctor> {
                   ),
 
                   ///horarios de la semana
-                  Container(
+                  SizedBox(
                     height: responsive.responsiveHeight(110),
                     child: ListView(
                       scrollDirection: Axis.horizontal,

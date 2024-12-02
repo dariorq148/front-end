@@ -1,10 +1,12 @@
-import 'dart:ui';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled3/ESPECIALIDA.dart';
 import 'package:untitled3/Profile/Profile__page.dart';
 import 'package:untitled3/Responsive/Responsive__Size.dart';
+import 'package:untitled3/Slider__.dart';
 import 'package:untitled3/doctor_perfil.dart';
+import 'package:untitled3/grid__especialidades.dart';
 
 class Home__Page extends StatefulWidget {
   const Home__Page({super.key});
@@ -79,98 +81,9 @@ class _Home__PageState extends State<Home__Page> {
                 ),
 
                 ///carrusel slider
-                SizedBox(
-                  height: 225,
-                  child: CarouselView(
-                    itemExtent: 300,
-                    shrinkExtent: 300,
-                    itemSnapping: true,
-                    scrollDirection: Axis.horizontal,
-                    children: [
-                      //anuncios - ofertas
-                      Container(
-                        width: 400,
-                        height: 180,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(25),
-                        ),
-                        child: Stack(
-                          children: [
-                            Positioned.fill(
-                              child: ImageFiltered(
-                                imageFilter:
-                                    ImageFilter.blur(sigmaX: 1, sigmaY: 1),
-                                child: Image.asset(
-                                  'assets/tarjeta.png',
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            ),
-                            Center(
-                              child: Text(
-                                '¡Cámbiate a Premium!',
-                                style: TextStyle(
-                                  fontFamily: 'Poppins',
-                                  fontSize: responsive.responsiveFontSize(18),
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      //redes sociales
-                      Container(
-                        width: 400,
-                        height: 180,
-                        decoration: BoxDecoration(
-                            /* image: DecorationImage(image: AssetImage('assets/fb.png'),
-                          ),*/
-                            /* color: Color(0xFFE3AADD),*/
-                            borderRadius: BorderRadius.circular(25)),
-                        child: Padding(
-                          padding: const EdgeInsets.all(2),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              const Text(
-                                'Visita Nuestras \nRedes Sociales',
-                                style: TextStyle(
-                                    fontFamily: 'Poppins', fontSize: 15),
-                              ),
-                              Column(
-                                children: [
-                                  Image.asset(
-                                    'assets/fb.png',
-                                    width: 50,
-                                    height: 50,
-                                  ),
-                                  Image.asset(
-                                    'assets/wtp.png',
-                                    width: 50,
-                                    height: 50,
-                                  ),
-                                  Image.asset(
-                                    'assets/ig.png',
-                                    width: 100,
-                                    height: 100,
-                                  ),
-                                ],
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
-                      Container(
-                        width: 400,
-                        height: 180,
-                        decoration: BoxDecoration(
-                            color: const Color(0xFFE3AADD),
-                            borderRadius: BorderRadius.circular(25)),
-                      ),
-                    ],
-                  ),
+                const SizedBox(
+                  height: 255,
+                 child: MiCarouselPage(),
                 ),
                 const SizedBox(
                   height: 25,
@@ -193,6 +106,11 @@ class _Home__PageState extends State<Home__Page> {
                       GestureDetector(
                         onTap: () {
                           //mas especialidades
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const EspecialidadesGrid(),
+                              ));
                         },
                         child: Container(
                           width: 80,
@@ -246,7 +164,7 @@ class _Home__PageState extends State<Home__Page> {
                                             const Especialidad(),
                                       ));
                                 },
-                                icon: const Icon(Icons.monitor_heart_outlined)),
+                                icon: const Icon(  CupertinoIcons.heart_fill,)),
                           ),
                           const Text(
                             'Cardiologia',
@@ -271,7 +189,7 @@ class _Home__PageState extends State<Home__Page> {
                                 borderRadius: BorderRadius.circular(360)),
                             child: IconButton(
                                 onPressed: () {},
-                                icon: const Icon(Icons.monitor_heart_outlined)),
+                                icon:  const Icon(Icons.abc_outlined)),
                           ),
                           const Text(
                             'Neurologia',
@@ -455,7 +373,8 @@ class _Home__PageState extends State<Home__Page> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => const Perfil__Doctor(),
+                                    builder: (context) =>
+                                        const Perfil__Doctor(),
                                   ));
                             },
                             child: Container(
